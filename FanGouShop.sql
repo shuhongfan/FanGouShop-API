@@ -1,20 +1,18 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 3307
+ Source Server         : shfs.cf
  Source Server Type    : MySQL
- Source Server Version : 50738 (5.7.38)
- Source Host           : 192.168.120.20:3307
+ Source Server Version : 50736
+ Source Host           : shfs.cf:3306
  Source Schema         : FanGouShop
 
  Target Server Type    : MySQL
- Target Server Version : 50738 (5.7.38)
+ Target Server Version : 50736
  File Encoding         : 65001
 
- Date: 24/11/2022 19:13:29
+ Date: 31/12/2022 23:35:11
 */
-create database FanGouShop;
-use FanGouShop;
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
@@ -52,7 +50,7 @@ CREATE TABLE `eb_article`  (
 -- ----------------------------
 -- Records of eb_article
 -- ----------------------------
-INSERT INTO `eb_article` VALUES (1, '601', '小米手机换新发布', 'new', 'crmebimage/public/maintain/2021/12/25/3598e8d0aa3f4bf1b61140daa0e36300k0te4s6z3j.jpg', 'new', '小米手机换新发布', 'new', '6', 0, '', NULL, 0, 0, 0, 0, 0, 1, 1, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/3b296903eb664d42aa5c4e4caca68b47hoh9roihtj.jpg\" /></p>', '2022-09-05 18:15:43', '2022-09-11 14:32:34');
+INSERT INTO `eb_article` VALUES (1, '601', '小米手机换新发布', 'new', 'crmebimage/public/maintain/2021/12/25/3598e8d0aa3f4bf1b61140daa0e36300k0te4s6z3j.jpg', 'new', '小米手机换新发布', 'new', '8', 0, '', NULL, 0, 0, 0, 0, 0, 1, 1, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/3b296903eb664d42aa5c4e4caca68b47hoh9roihtj.jpg\" /></p>', '2022-09-05 18:15:43', '2022-09-11 14:32:34');
 
 -- ----------------------------
 -- Table structure for eb_category
@@ -73,7 +71,7 @@ CREATE TABLE `eb_category`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `status+pid`(`pid`, `status`) USING BTREE,
   INDEX `id+status+url`(`path`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 743 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '分类表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 744 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '分类表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_category
@@ -359,6 +357,7 @@ INSERT INTO `eb_category` VALUES (739, 0, '/0/', '推广海报', 2, 'url', NULL,
 INSERT INTO `eb_category` VALUES (740, 0, '/0/', '订单详情动图', 2, 'url', NULL, 0, 1, '2021-12-25 22:17:46', '2021-12-25 22:17:46');
 INSERT INTO `eb_category` VALUES (741, 742, '/0/742/', '测试分类111', 1, '', 'crmebimage/public/maintain/2021/12/25/1f052138a6514e748137d863f54d719axyr6kovjd3.gif', 1, 0, '2022-09-05 17:54:04', '2022-09-05 18:06:15');
 INSERT INTO `eb_category` VALUES (742, 0, '/0/', '舒洪凡', 1, '', 'crmebimage/public/maintain/2021/12/25/b73c648fb7fd45cf8782e4ca0bc28a42s2a8dpad2x.png', 1, 0, '2022-09-05 18:02:04', '2022-09-05 18:02:04');
+INSERT INTO `eb_category` VALUES (743, 283, '/0/283/', '电脑', 1, '', 'crmebimage/public/store/2022/12/30/bd1317cf521543c98cb014f8be82ee33fq6q11uu5k.jpg', 1, 0, '2022-12-30 10:30:07', '2022-12-30 10:30:07');
 
 -- ----------------------------
 -- Table structure for eb_express
@@ -2566,13 +2565,18 @@ CREATE TABLE `eb_store_bargain`  (
   `quota_show` int(10) NOT NULL DEFAULT 0 COMMENT '限量总数显示',
   `people_num` int(11) NULL DEFAULT NULL COMMENT '砍价人数——需要多少人砍价成功',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '砍价表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '砍价表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_bargain
 -- ----------------------------
 INSERT INTO `eb_store_bargain` VALUES (1, 3, '万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', 'crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg', '件', 124, 0, '[\"crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg\"]', 1662307200000, 1667231999999, '万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', 374.00, 324.00, 2, NULL, NULL, 2, 1, 0, NULL, 100.00, 0, 0, 0, 1640409149614, 1, NULL, NULL, 0, 0, 1, 0.00, 0.00, 1, 1, 2);
 INSERT INTO `eb_store_bargain` VALUES (2, 1, 'LOFREE洛斐 奶茶无线蓝牙键鼠套装', 'crmebimage/public/maintain/2021/12/25/63969148b6c4447d918124fd810c1da5m2h9aiylly.jpg', '个', 343, 2, '[\"crmebimage/public/maintain/2021/12/25/63969148b6c4447d918124fd810c1da5m2h9aiylly.jpg\"]', 1662307200000, 1667231999999, 'LOFREE洛斐 奶茶无线蓝牙键鼠套装', 268.00, 226.00, 1, NULL, NULL, 2, 1, 0, NULL, 40.00, 0, 0, 0, 1640409242804, 1, NULL, NULL, 0, 1, 1, 0.00, 0.00, 67, 69, 2);
+INSERT INTO `eb_store_bargain` VALUES (3, 11, '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '台', 99, 0, '[\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\",\"crmebimage/public/content/2022/12/30/c8c5f3c8bc194ae88d63e7171ca9b448d3uqepqmm1.jpg\",\"crmebimage/public/content/2022/12/30/6d125e9214194df0a7e015b96132fe69hvh4p8ixsm.jpg\",\"crmebimage/public/content/2022/12/30/ad5c2181917f4ebe829545c5cb81a87f5chng9vic6.jpg\",\"crmebimage/public/content/2022/12/30/3da7e1f76f174631a180faefa14a613c3fab73j0no.jpg\",\"crmebimage/public/store/2022/12/30/bd1317cf521543c98cb014f8be82ee33fq6q11uu5k.jpg\"]', 1672329600000, 1675180799999, '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', 4199.00, 4099.00, 1, NULL, NULL, 2, 1, 0, NULL, 3599.00, 0, 0, 0, 1672409887688, 1, NULL, NULL, 0, 1, 3, 0.00, 0.00, 99, 99, 2);
+INSERT INTO `eb_store_bargain` VALUES (4, 10, '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', 'crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg', '部', 999, 0, '[\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\",\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\",\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\",\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\"]', 1672329600000, 1675180799999, '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', 919.00, 799.00, 1, NULL, NULL, 2, 1, 0, NULL, 500.00, 0, 0, 0, 1672412220380, 1, NULL, NULL, 0, 1, 2, 0.00, 0.00, 50, 50, 2);
+INSERT INTO `eb_store_bargain` VALUES (5, 12, '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 'crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg', '台', 99, 0, '[\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\",\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\",\"crmebimage/public/content/2022/12/31/b382600be26b46bbb75fba2a7b0093cad9xbhhlpqg.jpg\",\"crmebimage/public/content/2022/12/31/0b276b0355ea467c80c7c1b5bd5424d7wuommvyvl4.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\"]', 1672416000000, 1675180799999, '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 3899.00, 0.00, 1, NULL, NULL, 2, 0, 0, NULL, 3599.00, 0, 0, 1, 1672447516166, 1, NULL, NULL, 0, 0, 3, 0.00, 0.00, 1, 1, 2);
+INSERT INTO `eb_store_bargain` VALUES (6, 12, '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 'crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg', '台', 100, 0, '[\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\",\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\",\"crmebimage/public/content/2022/12/31/b382600be26b46bbb75fba2a7b0093cad9xbhhlpqg.jpg\",\"crmebimage/public/content/2022/12/31/0b276b0355ea467c80c7c1b5bd5424d7wuommvyvl4.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\"]', 1672416000000, 1675180799999, '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 3599.00, 3399.00, 1, NULL, NULL, 2, 1, 0, NULL, 3499.00, 0, 0, 0, 1672447698899, 1, NULL, NULL, 0, 1, 3, 0.00, 0.00, 30, 30, 2);
+INSERT INTO `eb_store_bargain` VALUES (7, 13, '惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑', 'crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg', '台', 998, 0, '[\"crmebimage/public/content/2022/12/31/d6fe717a1e304e3b9d58bb2b498982a5mm9en4t9od.jpg\",\"crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg\",\"crmebimage/public/content/2022/12/31/fd13b29b6d134fd09027d59bdd360392a26msj4h0b.jpg\",\"crmebimage/public/content/2022/12/31/8b1340a688264f4cb45f7f45d3491587i7pfs5rk60.jpg\",\"crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg\"]', 1672416000000, 1675180799999, '惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑', 4999.00, 4699.00, 1, NULL, NULL, 2, 0, 0, NULL, 3999.00, 0, 0, 0, 1672455439910, 1, NULL, NULL, 0, 0, 3, 0.00, 0.00, 998, 998, 2);
 
 -- ----------------------------
 -- Table structure for eb_store_bargain_user
@@ -2589,7 +2593,7 @@ CREATE TABLE `eb_store_bargain_user`  (
   `add_time` bigint(14) UNSIGNED NULL DEFAULT NULL COMMENT '参与时间',
   `is_del` tinyint(1) NOT NULL DEFAULT 0 COMMENT '是否取消',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户参与砍价表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户参与砍价表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_bargain_user
@@ -2599,6 +2603,10 @@ INSERT INTO `eb_store_bargain_user` VALUES (2, 6, 2, 226.00, 268.00, 42.00, 3, 1
 INSERT INTO `eb_store_bargain_user` VALUES (3, 6, 1, 324.00, 374.00, 40.03, 2, 1662520338230, 0);
 INSERT INTO `eb_store_bargain_user` VALUES (4, 3, 2, 226.00, 268.00, 42.00, 3, 1662521479553, 0);
 INSERT INTO `eb_store_bargain_user` VALUES (5, 3, 1, 324.00, 374.00, 50.00, 3, 1662882995970, 0);
+INSERT INTO `eb_store_bargain_user` VALUES (6, 11, 3, 4099.00, 4199.00, 100.00, 3, 1672409928833, 0);
+INSERT INTO `eb_store_bargain_user` VALUES (7, 11, 4, 799.00, 919.00, 120.00, 3, 1672412257621, 0);
+INSERT INTO `eb_store_bargain_user` VALUES (8, 17, 6, 3399.00, 3599.00, 200.00, 3, 1672447935946, 0);
+INSERT INTO `eb_store_bargain_user` VALUES (9, 19, 6, 3399.00, 3599.00, 62.62, 1, 1672455453445, 0);
 
 -- ----------------------------
 -- Table structure for eb_store_bargain_user_help
@@ -2612,7 +2620,7 @@ CREATE TABLE `eb_store_bargain_user_help`  (
   `price` decimal(8, 2) UNSIGNED NULL DEFAULT NULL COMMENT '帮助砍价多少金额',
   `add_time` bigint(14) UNSIGNED NULL DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '砍价用户帮助表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '砍价用户帮助表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_bargain_user_help
@@ -2628,6 +2636,13 @@ INSERT INTO `eb_store_bargain_user_help` VALUES (8, 4, 2, 4, 12.09, 166252200936
 INSERT INTO `eb_store_bargain_user_help` VALUES (9, 3, 1, 5, 13.38, 1662882996029);
 INSERT INTO `eb_store_bargain_user_help` VALUES (10, 7, 2, 5, 20.49, 1662883593554);
 INSERT INTO `eb_store_bargain_user_help` VALUES (11, 7, 2, 5, 16.13, 1662883657883);
+INSERT INTO `eb_store_bargain_user_help` VALUES (12, 11, 3, 6, 21.93, 1672409928950);
+INSERT INTO `eb_store_bargain_user_help` VALUES (13, 13, 3, 6, 78.07, 1672410212987);
+INSERT INTO `eb_store_bargain_user_help` VALUES (14, 11, 4, 7, 45.00, 1672412257722);
+INSERT INTO `eb_store_bargain_user_help` VALUES (15, 14, 4, 7, 75.00, 1672415059276);
+INSERT INTO `eb_store_bargain_user_help` VALUES (16, 17, 6, 8, 127.27, 1672447936047);
+INSERT INTO `eb_store_bargain_user_help` VALUES (17, 15, 6, 8, 72.73, 1672447966947);
+INSERT INTO `eb_store_bargain_user_help` VALUES (18, 19, 6, 9, 62.62, 1672455453542);
 
 -- ----------------------------
 -- Table structure for eb_store_cart
@@ -2707,7 +2722,7 @@ CREATE TABLE `eb_store_combination`  (
   `once_num` int(11) NOT NULL DEFAULT 0 COMMENT '每个订单可购买数量',
   `virtual_ration` int(11) NOT NULL DEFAULT 100 COMMENT '虚拟成团百分比',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '拼团商品表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '拼团商品表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_combination
@@ -2717,6 +2732,8 @@ INSERT INTO `eb_store_combination` VALUES (2, 6, 0, 'crmebimage/public/maintain/
 INSERT INTO `eb_store_combination` VALUES (3, 7, 0, 'crmebimage/public/maintain/2021/12/25/37382cca048b4011bdbacd3cbbe0814daw1o5x0tco.jpg', '[\"crmebimage/public/maintain/2021/12/25/37382cca048b4011bdbacd3cbbe0814daw1o5x0tco.jpg\"]', '车载小鹿首饰架摆件鹿角树形耳钉首饰展示架耳环架手链饰品收纳首饰挂件 白色', NULL, 2, '车载小鹿首饰架摆件鹿角树形耳钉首饰展示架耳环架手链饰品收纳首饰挂件 白色', 8.00, 0, 0, 1533, 1640749674852, 0, 1, 0, 1, NULL, NULL, NULL, 1640707200000, 1643644799999, 1, 5.00, 0, '个', 1, 0.00, 0.00, 1, 151, 151, 18.00, 1, 0);
 INSERT INTO `eb_store_combination` VALUES (4, 3, 0, 'crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg', '[\"crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg\"]', '万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', NULL, 2, '万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', 324.00, 0, 7, 1859, 1640749726595, 0, 1, 0, 1, NULL, NULL, NULL, 1661788800000, 1672502399999, 1, 100.00, 0, '件', 1, 0.00, 0.00, 1, 177, 183, 412.00, 1, 0);
 INSERT INTO `eb_store_combination` VALUES (5, 9, 0, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '[\"crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg\",\"crmebimage/public/content/2022/09/07/729aa98283634d9aab124414eab508cbaahj1jwdlr.jpg\",\"crmebimage/public/content/2022/09/07/fb8d4a6232ff4a1ba9fd91fe588db9aevfl27uv7cy.jpg\"]', 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', NULL, 2, 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', 8599.00, 0, 2, 5988, 1662886447554, 0, 1, 0, 1, NULL, NULL, NULL, 1662825600000, 1667231999999, 1, 5000.00, 0, '部', 3, 0.00, 0.00, 1, 2998, 3000, 8999.00, 1, 0);
+INSERT INTO `eb_store_combination` VALUES (6, 11, 0, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '[\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\",\"crmebimage/public/content/2022/12/30/c8c5f3c8bc194ae88d63e7171ca9b448d3uqepqmm1.jpg\",\"crmebimage/public/content/2022/12/30/6d125e9214194df0a7e015b96132fe69hvh4p8ixsm.jpg\",\"crmebimage/public/content/2022/12/30/ad5c2181917f4ebe829545c5cb81a87f5chng9vic6.jpg\",\"crmebimage/public/content/2022/12/30/3da7e1f76f174631a180faefa14a613c3fab73j0no.jpg\",\"crmebimage/public/store/2022/12/30/bd1317cf521543c98cb014f8be82ee33fq6q11uu5k.jpg\"]', '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', NULL, 2, '【热销】酷睿处理器，金属机身，高色域全面屏，物理防窥摄像头，接口丰富，大电池长续航（更多）', 4099.00, 0, 2, 197, 1672415258598, 0, 1, 0, 1, NULL, NULL, NULL, 1672329600000, 1675180799999, 1, 3599.00, 0, '台', 3, 0.00, 0.00, 1, 138, 140, 3599.00, 1, 0);
+INSERT INTO `eb_store_combination` VALUES (7, 12, 0, 'crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg', '[\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\",\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\",\"crmebimage/public/content/2022/12/31/b382600be26b46bbb75fba2a7b0093cad9xbhhlpqg.jpg\",\"crmebimage/public/content/2022/12/31/0b276b0355ea467c80c7c1b5bd5424d7wuommvyvl4.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\"]', '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', NULL, 2, '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 3499.00, 0, 2, 197, 1672448110080, 0, 1, 0, 1, NULL, NULL, NULL, 1672416000000, 1675180799999, 1, 3499.00, 0, '台', 3, 0.00, 0.00, 1, 197, 199, 4099.00, 1, 0);
 
 -- ----------------------------
 -- Table structure for eb_store_coupon
@@ -2747,7 +2764,7 @@ CREATE TABLE `eb_store_coupon`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `state`(`status`) USING BTREE,
   INDEX `is_del`(`is_del`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '优惠券表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '优惠券表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_coupon
@@ -2758,6 +2775,8 @@ INSERT INTO `eb_store_coupon` VALUES (3, '中秋快乐', 10.00, 1, 30, 27, 1, ''
 INSERT INTO `eb_store_coupon` VALUES (4, '测试优惠券', 50.00, 1, 50, 47, 2, '8', 0.00, '2022-11-24 18:40:27', NULL, 0, NULL, NULL, 20, 1, 0, 1, 0, '2022-09-05 18:40:04', '2022-11-24 18:40:27');
 INSERT INTO `eb_store_coupon` VALUES (5, '日用杂货品类券', 10.00, 1, 20, 17, 3, '300', 0.00, '2022-09-07 09:49:45', NULL, 0, NULL, NULL, 20, 1, 0, 1, 0, '2022-09-05 18:48:27', '2022-09-07 09:49:45');
 INSERT INTO `eb_store_coupon` VALUES (6, 'apple优惠券', 500.00, 1, 100, 98, 2, '9', 0.00, '2022-09-08 22:34:47', NULL, 0, '2022-09-10 19:17:16', '2022-09-30 19:17:16', 20, 1, 0, 1, 0, '2022-09-08 22:34:46', '2022-09-08 22:34:46');
+INSERT INTO `eb_store_coupon` VALUES (7, 'new', 500.00, 1, 50, 49, 3, '297', 1000.00, '2022-12-30 16:05:16', NULL, 0, NULL, NULL, 7, 1, 0, 1, 0, '2022-12-30 16:04:22', '2022-12-30 16:05:16');
+INSERT INTO `eb_store_coupon` VALUES (8, 'new2', 100.00, 1, 30, 29, 1, '', 101.00, '2022-12-31 00:58:29', NULL, 0, NULL, NULL, 7, 1, 0, 1, 0, '2022-12-31 00:58:19', '2022-12-31 00:58:29');
 
 -- ----------------------------
 -- Table structure for eb_store_coupon_user
@@ -2785,7 +2804,7 @@ CREATE TABLE `eb_store_coupon_user`  (
   INDEX `uid`(`uid`) USING BTREE,
   INDEX `end_time`(`end_time`) USING BTREE,
   INDEX `status`(`status`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '优惠券记录表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '优惠券记录表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_coupon_user
@@ -2801,6 +2820,8 @@ INSERT INTO `eb_store_coupon_user` VALUES (8, 6, 0, 7, 'apple优惠券', 500.00,
 INSERT INTO `eb_store_coupon_user` VALUES (9, 6, 0, 6, 'apple优惠券', 500.00, 0.00, 'send', 2, '2022-09-10 19:17:17', '2022-09-10 19:17:17', '2022-09-10 19:17:16', '2022-09-30 19:17:16', NULL, 2, '9');
 INSERT INTO `eb_store_coupon_user` VALUES (10, 3, 0, 3, '中秋快乐', 10.00, 0.00, 'receive', 2, '2022-09-11 22:06:24', '2022-09-11 22:06:24', '2022-09-11 22:06:24', '2022-10-01 22:06:24', NULL, 1, NULL);
 INSERT INTO `eb_store_coupon_user` VALUES (11, 4, 0, 9, '测试优惠券', 50.00, 0.00, 'receive', 1, '2022-11-24 18:40:27', '2022-11-24 18:40:27', '2022-11-24 18:40:26', '2022-12-14 18:40:26', NULL, 2, '8');
+INSERT INTO `eb_store_coupon_user` VALUES (12, 7, 0, 11, 'new', 500.00, 1000.00, 'receive', 0, '2022-12-30 16:05:16', '2022-12-30 16:05:16', '2022-12-31 00:05:16', '2023-01-07 00:05:16', NULL, 3, '297');
+INSERT INTO `eb_store_coupon_user` VALUES (13, 8, 0, 17, 'new2', 100.00, 101.00, 'receive', 0, '2022-12-31 00:58:29', '2022-12-31 00:58:29', '2022-12-31 08:58:29', '2023-01-07 08:58:29', NULL, 1, NULL);
 
 -- ----------------------------
 -- Table structure for eb_store_order
@@ -2876,7 +2897,7 @@ CREATE TABLE `eb_store_order`  (
   INDEX `status`(`status`) USING BTREE,
   INDEX `is_del`(`is_del`) USING BTREE,
   INDEX `coupon_id`(`coupon_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '订单表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '订单表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_order
@@ -2927,6 +2948,18 @@ INSERT INTO `eb_store_order` VALUES (43, 'order72480166289638084432221', 7, '王
 INSERT INTO `eb_store_order` VALUES (44, 'order42539166459442838723672', 2, '张敏', '13435632659', '湖北省武汉市洪山区友谊大道532附6湖北省妇幼保健院徐东门诊部', 0.00, 1, 10999.00, 0.00, 10999.00, 0.00, 0.00, 0, 0.00, 1, '2022-10-01 11:21:41', 'alipay', '2022-10-01 11:20:28', 2, 2, '', '', '收货地址填错了', 'new', '2022-10-01 11:23:48', 10999.00, '韵达快递', 'express', 'YD1325632641566', 10999, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-10-01 11:20:26', 'yunda', 0, 0, 10999.00, 0.00, 0, NULL);
 INSERT INTO `eb_store_order` VALUES (45, 'order78838166928647851216021', 9, '李斌', '15465686563', '湖北省武汉市洪山区友谊大道528千禧名苑', 0.00, 1, 787.00, 0.00, 737.00, 0.00, 0.00, 11, 50.00, 1, '2022-11-24 18:43:45', 'alipay', '2022-11-24 18:41:18', 1, 2, 'crmebimage/public/product/2022/11/24/0dde508a599b4639b27407c0f942acdbxim0aw3nzx.png', '申请退货', '未按预定时间发货 ', NULL, '2022-11-24 19:01:35', 737.00, '圆通速递', 'express', 'YT4535145154', 737, 0, 0, '立刻发货', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-11-24 18:41:18', 'yuantong', 0, 0, 787.00, 0.00, 0, NULL);
 INSERT INTO `eb_store_order` VALUES (46, 'order60517166928823195290104', 9, 'new', '13456565695', '湖北省孝感市孝南区学院路158号同大公寓22栋湖北工程学院新技术学院', 0.00, 1, 350.00, 0.00, 350.00, 0.00, 0.00, 0, 0.00, 1, '2022-11-24 19:11:45', 'alipay', '2022-11-24 19:10:31', 0, 0, NULL, NULL, NULL, NULL, NULL, 0.00, NULL, NULL, NULL, 350, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 6, 0, '', 0, 1, 0, 6, 0, 0, '2022-11-24 19:10:32', NULL, 0, 0, 350.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (47, 'order19682167231464460926520', 10, '张三', '13453131313', '湖北省武汉市洪山区友谊大道532号江南花园', 0.00, 1, 919.00, 0.00, 919.00, 0.00, 0.00, 0, 0.00, 0, NULL, 'alipay', '2022-12-29 11:50:44', 0, 0, NULL, NULL, NULL, NULL, NULL, 0.00, NULL, NULL, NULL, 1919, 0, 0, '', 1, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 1, '2022-12-29 11:50:44', NULL, 0, 0, 919.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (48, 'order14264167231497534324754', 2, '张敏', '13435632659', '湖北省武汉市洪山区友谊大道532附6湖北省妇幼保健院徐东门诊部', 0.00, 1, 919.00, 0.00, 919.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-29 19:57:16', 'alipay', '2022-12-29 11:56:15', 0, 0, NULL, NULL, NULL, NULL, NULL, 0.00, NULL, NULL, NULL, 1919, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-29 11:56:15', NULL, 0, 0, 919.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (49, 'order75355167232903521457103', 2, '张三', '13435695965', '湖北省武汉市洪山区城站路32-12号', 0.00, 1, 8999.00, 0.00, 8999.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-29 15:51:37', 'alipay', '2022-12-29 15:50:35', 3, 0, NULL, NULL, NULL, NULL, NULL, 0.00, '申通快递', 'express', 'SK1232356542', 8999, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-29 15:50:35', 'shentong', 0, 0, 8999.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (50, 'order30004167233111492329236', 2, '张敏', '13435632659', '湖北省武汉市洪山区友谊大道532附6湖北省妇幼保健院徐东门诊部', 0.00, 1, 8999.00, 0.00, 8999.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-29 16:26:43', 'alipay', '2022-12-29 16:25:14', 3, 0, NULL, NULL, NULL, NULL, NULL, 0.00, '德邦快递', 'express', 'DB1123456', 8999, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-29 16:25:14', 'debangkuaidi', 0, 0, 8999.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (51, 'order22070167239816482636386', 11, '张三', '13435323236', '北京市北京市东城区朝阳门外大街2号中华人民共和国外交部', 0.00, 1, 4199.00, 0.00, 4199.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-30 11:03:34', 'alipay', '2022-12-30 11:02:44', 3, 0, NULL, NULL, NULL, NULL, NULL, 0.00, '韵达快递', 'express', 'YD123456', 4599, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-30 11:02:44', 'yunda', 0, 0, 4199.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (52, 'order22210167241535649938024', 11, '张三', '13435323236', '北京市北京市东城区朝阳门外大街2号中华人民共和国外交部', 0.00, 1, 4499.00, 0.00, 4499.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-30 23:49:53', 'alipay', '2022-12-30 23:49:16', 0, 0, NULL, NULL, NULL, NULL, NULL, 0.00, NULL, NULL, NULL, 4499, 0, 0, '', 0, NULL, 0, 0, 6, 7, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-30 15:49:16', NULL, 0, 0, 4499.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (53, 'order59954167241571106160075', 15, '李四', '15678998763', '湖北省孝感市孝南区交通大道272号湖北工程学院湖北工程学院明德楼', 0.00, 1, 4099.00, 0.00, 4099.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-30 23:55:44', 'alipay', '2022-12-30 23:55:11', 0, 0, NULL, NULL, NULL, NULL, NULL, 0.00, NULL, NULL, NULL, 4099, 0, 0, '', 0, NULL, 0, 0, 6, 8, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-30 15:55:11', NULL, 0, 0, 4099.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (54, 'order85856167244712010458422', 17, '张三', '13453131313', '湖北省武汉市洪山区珞狮路274号武汉理工大学升升学生公寓', 0.00, 1, 3899.00, 0.00, 3899.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-31 08:39:29', 'alipay', '2022-12-31 08:38:40', 3, 0, NULL, NULL, NULL, NULL, NULL, 0.00, '圆通速递', 'express', 'YT865295', 4299, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-31 00:38:40', 'yuantong', 0, 0, 3899.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (55, 'order76001167244814499554855', 17, '张三', '13453131313', '湖北省武汉市洪山区珞狮路274号武汉理工大学升升学生公寓', 0.00, 1, 3499.00, 0.00, 3499.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-31 08:56:03', 'alipay', '2022-12-31 08:55:44', 0, 0, NULL, NULL, NULL, NULL, NULL, 0.00, NULL, NULL, NULL, 3499, 0, 0, '', 0, NULL, 0, 0, 7, 9, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-31 00:55:45', NULL, 0, 0, 3499.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (56, 'order48660167244821086152429', 15, '李四', '15678998763', '湖北省孝感市孝南区交通大道272号湖北工程学院湖北工程学院明德楼', 0.00, 1, 3799.00, 0.00, 3799.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-31 08:57:19', 'alipay', '2022-12-31 08:56:50', 0, 0, NULL, NULL, NULL, NULL, NULL, 0.00, NULL, NULL, NULL, 3799, 0, 0, '', 0, NULL, 0, 0, 7, 10, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-31 00:56:50', NULL, 0, 0, 3799.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (57, 'order58951167245338977791476', 18, '哈哈', '13435556556', '湖北省武汉市洪山区珞狮路122号武汉理工大学(南湖校区)', 0.00, 1, 3899.00, 0.00, 3899.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-31 10:24:12', 'alipay', '2022-12-31 10:23:09', 3, 0, NULL, NULL, NULL, NULL, NULL, 0.00, '中通快递', 'express', 'ZT123456', 4299, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-31 02:23:09', 'zhongtong', 0, 0, 3899.00, 0.00, 0, NULL);
+INSERT INTO `eb_store_order` VALUES (58, 'order95253167245521210365384', 19, '张三', '13435356536', '湖北省武汉市洪山区珞狮路122号武汉理工大学(南湖校区)', 0.00, 1, 4999.00, 0.00, 4999.00, 0.00, 0.00, 0, 0.00, 1, '2022-12-31 10:54:08', 'alipay', '2022-12-31 10:53:32', 3, 0, NULL, NULL, NULL, NULL, NULL, 0.00, '申通快递', 'express', 'ST123456', 5299, 0, 0, '', 0, NULL, 0, 0, 0, 0, 0.00, 0, 0, '', 0, 1, 0, 6, 0, 0, '2022-12-31 02:53:32', 'shentong', 0, 0, 4999.00, 0.00, 0, NULL);
 
 -- ----------------------------
 -- Table structure for eb_store_order_info
@@ -2957,7 +2990,7 @@ CREATE TABLE `eb_store_order_info`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `oid`(`order_id`, `unique`) USING BTREE,
   INDEX `product_id`(`product_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 48 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '订单购物详情表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '订单购物详情表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_order_info
@@ -3009,6 +3042,18 @@ INSERT INTO `eb_store_order_info` VALUES (44, 43, 9, '{\"image\":\"crmebimage/pu
 INSERT INTO `eb_store_order_info` VALUES (45, 44, 9, '{\"image\":\"crmebimage/public/content/2022/09/07/a374f0f6824744a5aef57702a5d90593j3rsix45a1.jpg\",\"productId\":9,\"attrValueId\":54,\"weight\":1.00,\"giveIntegral\":0,\"isSub\":false,\"productName\":\"Apple/苹果 iPhone 13 Pro Max 手机5G全网通\",\"volume\":1.00,\"payNum\":1,\"price\":10999.00,\"vipPrice\":10999.00,\"tempId\":1,\"sku\":\"256G,白色\",\"productType\":0}', '54', '2022-10-01 11:20:26', '2022-10-01 11:20:26', 'order42539166459442838723672', 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', 54, 'crmebimage/public/content/2022/09/07/a374f0f6824744a5aef57702a5d90593j3rsix45a1.jpg', '256G,白色', 10999.00, 1, 1.00, 1.00, 0, 0, 0, 10999.00, 0);
 INSERT INTO `eb_store_order_info` VALUES (46, 45, 8, '{\"image\":\"crmebimage/public/maintain/2021/12/25/7a6475bba07c47bb98e5db0e0d21c8ebq5sw2kijlc.jpg\",\"productId\":8,\"attrValueId\":8,\"weight\":0.50,\"giveIntegral\":0,\"isSub\":false,\"productName\":\"兰蔻（LANCOME）口红196 全新菁纯丝绒雾面唇膏 化妆品礼盒\",\"volume\":0.00,\"payNum\":1,\"price\":787.00,\"vipPrice\":787.00,\"tempId\":1,\"sku\":\"默认\",\"productType\":0}', '8', '2022-11-24 18:41:18', '2022-11-24 18:41:18', 'order78838166928647851216021', '兰蔻（LANCOME）口红196 全新菁纯丝绒雾面唇膏 化妆品礼盒', 8, 'crmebimage/public/maintain/2021/12/25/7a6475bba07c47bb98e5db0e0d21c8ebq5sw2kijlc.jpg', '默认', 787.00, 1, 0.50, 0.00, 0, 0, 0, 787.00, 0);
 INSERT INTO `eb_store_order_info` VALUES (47, 46, 3, '{\"image\":\"crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg\",\"productId\":3,\"attrValueId\":99,\"weight\":0.50,\"productName\":\"【秒杀】万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖\",\"volume\":0.00,\"payNum\":1,\"price\":350.00,\"tempId\":1,\"sku\":\"格物致知红色,200*27cm\",\"productType\":1}', '99', '2022-11-24 19:10:32', '2022-11-24 19:10:32', 'order60517166928823195290104', '【秒杀】万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', 99, 'crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg', '格物致知红色,200*27cm', 350.00, 1, 0.50, 0.00, 0, 0, 0, 350.00, 1);
+INSERT INTO `eb_store_order_info` VALUES (48, 47, 10, '{\"image\":\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\",\"productId\":10,\"attrValueId\":87,\"weight\":1.00,\"giveIntegral\":1000,\"isSub\":false,\"productName\":\"小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机\",\"volume\":1.00,\"payNum\":1,\"price\":919.00,\"vipPrice\":919.00,\"tempId\":2,\"sku\":\"128G,黑色\",\"productType\":0}', '87', '2022-12-29 11:50:44', '2022-12-29 11:50:44', 'order19682167231464460926520', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', 87, 'crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg', '128G,黑色', 919.00, 1, 1.00, 1.00, 1000, 0, 0, 919.00, 0);
+INSERT INTO `eb_store_order_info` VALUES (49, 48, 10, '{\"image\":\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\",\"productId\":10,\"attrValueId\":87,\"weight\":1.00,\"giveIntegral\":1000,\"isSub\":false,\"productName\":\"小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机\",\"volume\":1.00,\"payNum\":1,\"price\":919.00,\"vipPrice\":919.00,\"tempId\":2,\"sku\":\"128G,黑色\",\"productType\":0}', '87', '2022-12-29 11:56:15', '2022-12-29 11:56:15', 'order14264167231497534324754', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', 87, 'crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg', '128G,黑色', 919.00, 1, 1.00, 1.00, 1000, 0, 0, 919.00, 0);
+INSERT INTO `eb_store_order_info` VALUES (50, 49, 9, '{\"image\":\"crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg\",\"productId\":9,\"attrValueId\":51,\"weight\":1.00,\"giveIntegral\":0,\"isSub\":false,\"productName\":\"Apple/苹果 iPhone 13 Pro Max 手机5G全网通\",\"volume\":1.00,\"payNum\":1,\"price\":8999.00,\"vipPrice\":8999.00,\"tempId\":1,\"sku\":\"128G,黑色\",\"productType\":0}', '51', '2022-12-29 15:50:35', '2022-12-29 15:50:35', 'order75355167232903521457103', 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', 51, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '128G,黑色', 8999.00, 1, 1.00, 1.00, 0, 0, 0, 8999.00, 0);
+INSERT INTO `eb_store_order_info` VALUES (51, 50, 9, '{\"image\":\"crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg\",\"productId\":9,\"attrValueId\":51,\"weight\":1.00,\"giveIntegral\":0,\"isSub\":false,\"productName\":\"Apple/苹果 iPhone 13 Pro Max 手机5G全网通\",\"volume\":1.00,\"payNum\":1,\"price\":8999.00,\"vipPrice\":8999.00,\"tempId\":1,\"sku\":\"128G,黑色\",\"productType\":0}', '51', '2022-12-29 16:25:14', '2022-12-29 16:25:14', 'order30004167233111492329236', 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', 51, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '128G,黑色', 8999.00, 1, 1.00, 1.00, 0, 0, 0, 8999.00, 0);
+INSERT INTO `eb_store_order_info` VALUES (52, 51, 11, '{\"image\":\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\",\"productId\":11,\"attrValueId\":100,\"weight\":1.00,\"giveIntegral\":400,\"isSub\":false,\"productName\":\"联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本\",\"volume\":1.00,\"payNum\":1,\"price\":4199.00,\"vipPrice\":4199.00,\"tempId\":3,\"sku\":\"Air14\",\"productType\":0}', '100', '2022-12-30 11:02:44', '2022-12-30 11:02:44', 'order22070167239816482636386', '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', 100, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', 'Air14', 4199.00, 1, 1.00, 1.00, 400, 0, 0, 4199.00, 0);
+INSERT INTO `eb_store_order_info` VALUES (53, 52, 11, '{\"image\":\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\",\"productId\":11,\"attrValueId\":107,\"weight\":1.00,\"productName\":\"联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本\",\"volume\":1.00,\"payNum\":1,\"price\":4499.00,\"tempId\":3,\"sku\":\"Air15\",\"productType\":3}', '107', '2022-12-30 15:49:16', '2022-12-30 15:49:16', 'order22210167241535649938024', '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', 107, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', 'Air15', 4499.00, 1, 1.00, 1.00, 0, 0, 0, 4499.00, 3);
+INSERT INTO `eb_store_order_info` VALUES (54, 53, 11, '{\"image\":\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\",\"productId\":11,\"attrValueId\":106,\"weight\":1.00,\"productName\":\"联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本\",\"volume\":1.00,\"payNum\":1,\"price\":4099.00,\"tempId\":3,\"sku\":\"Air14\",\"productType\":3}', '106', '2022-12-30 15:55:11', '2022-12-30 15:55:11', 'order59954167241571106160075', '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', 106, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', 'Air14', 4099.00, 1, 1.00, 1.00, 0, 0, 0, 4099.00, 3);
+INSERT INTO `eb_store_order_info` VALUES (55, 54, 12, '{\"image\":\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\",\"productId\":12,\"attrValueId\":109,\"weight\":1.00,\"giveIntegral\":400,\"isSub\":false,\"productName\":\"华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡\",\"volume\":1.00,\"payNum\":1,\"price\":3899.00,\"vipPrice\":3899.00,\"tempId\":3,\"sku\":\"16GG\",\"productType\":0}', '109', '2022-12-31 00:38:40', '2022-12-31 00:38:40', 'order85856167244712010458422', '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 109, 'crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg', '16GG', 3899.00, 1, 1.00, 1.00, 400, 0, 0, 3899.00, 0);
+INSERT INTO `eb_store_order_info` VALUES (56, 55, 12, '{\"image\":\"\",\"productId\":12,\"attrValueId\":116,\"weight\":1.00,\"productName\":\"华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡\",\"volume\":1.00,\"payNum\":1,\"price\":3499.00,\"tempId\":3,\"sku\":\"8G\",\"productType\":3}', '116', '2022-12-31 00:55:45', '2022-12-31 00:55:45', 'order76001167244814499554855', '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 116, '', '8G', 3499.00, 1, 1.00, 1.00, 0, 0, 0, 3499.00, 3);
+INSERT INTO `eb_store_order_info` VALUES (57, 56, 12, '{\"image\":\"\",\"productId\":12,\"attrValueId\":115,\"weight\":1.00,\"productName\":\"华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡\",\"volume\":1.00,\"payNum\":1,\"price\":3799.00,\"tempId\":3,\"sku\":\"16GG\",\"productType\":3}', '115', '2022-12-31 00:56:50', '2022-12-31 00:56:50', 'order48660167244821086152429', '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 115, '', '16GG', 3799.00, 1, 1.00, 1.00, 0, 0, 0, 3799.00, 3);
+INSERT INTO `eb_store_order_info` VALUES (58, 57, 12, '{\"image\":\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\",\"productId\":12,\"attrValueId\":109,\"weight\":1.00,\"giveIntegral\":400,\"isSub\":false,\"productName\":\"华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡\",\"volume\":1.00,\"payNum\":1,\"price\":3899.00,\"vipPrice\":3899.00,\"tempId\":3,\"sku\":\"16GG\",\"productType\":0}', '109', '2022-12-31 02:23:09', '2022-12-31 02:23:09', 'order58951167245338977791476', '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 109, 'crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg', '16GG', 3899.00, 1, 1.00, 1.00, 400, 0, 0, 3899.00, 0);
+INSERT INTO `eb_store_order_info` VALUES (59, 58, 13, '{\"image\":\"crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg\",\"productId\":13,\"attrValueId\":117,\"weight\":1.00,\"giveIntegral\":300,\"isSub\":false,\"productName\":\"惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑\",\"volume\":1.00,\"payNum\":1,\"price\":4999.00,\"vipPrice\":4999.00,\"tempId\":3,\"sku\":\"Air14\",\"productType\":0}', '117', '2022-12-31 02:53:32', '2022-12-31 02:53:32', 'order95253167245521210365384', '惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑', 117, 'crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg', 'Air14', 4999.00, 1, 1.00, 1.00, 300, 0, 0, 4999.00, 0);
 
 -- ----------------------------
 -- Table structure for eb_store_order_status
@@ -3166,6 +3211,43 @@ INSERT INTO `eb_store_order_status` VALUES (45, 'express', '已发货 快递公�
 INSERT INTO `eb_store_order_status` VALUES (45, 'apply_refund', '用户申请退款原因：申请退货', '2022-11-24 19:01:35');
 INSERT INTO `eb_store_order_status` VALUES (46, 'cache_key_create_order', '订单生成', '2022-11-24 19:10:31');
 INSERT INTO `eb_store_order_status` VALUES (46, 'pay_success', '用户付款成功', '2022-11-24 19:12:44');
+INSERT INTO `eb_store_order_status` VALUES (47, 'cache_key_create_order', '订单生成', '2022-12-29 11:50:44');
+INSERT INTO `eb_store_order_status` VALUES (47, 'cancel', '到期未支付系统自动取消', '2022-12-29 19:51:14');
+INSERT INTO `eb_store_order_status` VALUES (48, 'cache_key_create_order', '订单生成', '2022-12-29 11:56:15');
+INSERT INTO `eb_store_order_status` VALUES (48, 'pay_success', '用户付款成功', '2022-12-29 11:57:34');
+INSERT INTO `eb_store_order_status` VALUES (49, 'cache_key_create_order', '订单生成', '2022-12-29 15:50:35');
+INSERT INTO `eb_store_order_status` VALUES (49, 'pay_success', '用户付款成功', '2022-12-29 15:51:36');
+INSERT INTO `eb_store_order_status` VALUES (49, 'express', '已发货 快递公司：申通快递, 快递单号：SK1232356542', '2022-12-29 15:52:05');
+INSERT INTO `eb_store_order_status` VALUES (49, 'user_take_delivery', '用户已收货', '2022-12-29 15:52:35');
+INSERT INTO `eb_store_order_status` VALUES (49, 'pay_success', '用户付款成功', '2022-12-29 15:52:36');
+INSERT INTO `eb_store_order_status` VALUES (50, 'cache_key_create_order', '订单生成', '2022-12-29 16:25:15');
+INSERT INTO `eb_store_order_status` VALUES (50, 'pay_success', '用户付款成功', '2022-12-29 16:26:47');
+INSERT INTO `eb_store_order_status` VALUES (50, 'express', '已发货 快递公司：德邦快递, 快递单号：DB1123456', '2022-12-29 16:27:13');
+INSERT INTO `eb_store_order_status` VALUES (50, 'user_take_delivery', '用户已收货', '2022-12-29 16:27:47');
+INSERT INTO `eb_store_order_status` VALUES (51, 'cache_key_create_order', '订单生成', '2022-12-30 11:02:44');
+INSERT INTO `eb_store_order_status` VALUES (51, 'pay_success', '用户付款成功', '2022-12-30 11:04:06');
+INSERT INTO `eb_store_order_status` VALUES (51, 'express', '已发货 快递公司：韵达快递, 快递单号：YD123456', '2022-12-30 11:05:13');
+INSERT INTO `eb_store_order_status` VALUES (51, 'user_take_delivery', '用户已收货', '2022-12-30 11:06:06');
+INSERT INTO `eb_store_order_status` VALUES (52, 'cache_key_create_order', '订单生成', '2022-12-30 23:49:16');
+INSERT INTO `eb_store_order_status` VALUES (52, 'pay_success', '用户付款成功', '2022-12-30 23:50:36');
+INSERT INTO `eb_store_order_status` VALUES (53, 'cache_key_create_order', '订单生成', '2022-12-30 23:55:11');
+INSERT INTO `eb_store_order_status` VALUES (53, 'pay_success', '用户付款成功', '2022-12-30 23:56:37');
+INSERT INTO `eb_store_order_status` VALUES (54, 'cache_key_create_order', '订单生成', '2022-12-31 08:38:40');
+INSERT INTO `eb_store_order_status` VALUES (54, 'pay_success', '用户付款成功', '2022-12-31 08:39:38');
+INSERT INTO `eb_store_order_status` VALUES (54, 'express', '已发货 快递公司：圆通速递, 快递单号：YT865295', '2022-12-31 08:40:08');
+INSERT INTO `eb_store_order_status` VALUES (54, 'user_take_delivery', '用户已收货', '2022-12-31 08:40:37');
+INSERT INTO `eb_store_order_status` VALUES (55, 'cache_key_create_order', '订单生成', '2022-12-31 08:55:45');
+INSERT INTO `eb_store_order_status` VALUES (55, 'pay_success', '用户付款成功', '2022-12-31 08:56:38');
+INSERT INTO `eb_store_order_status` VALUES (56, 'cache_key_create_order', '订单生成', '2022-12-31 08:56:50');
+INSERT INTO `eb_store_order_status` VALUES (56, 'pay_success', '用户付款成功', '2022-12-31 08:57:39');
+INSERT INTO `eb_store_order_status` VALUES (57, 'cache_key_create_order', '订单生成', '2022-12-31 10:23:09');
+INSERT INTO `eb_store_order_status` VALUES (57, 'pay_success', '用户付款成功', '2022-12-31 10:24:15');
+INSERT INTO `eb_store_order_status` VALUES (57, 'express', '已发货 快递公司：中通快递, 快递单号：ZT123456', '2022-12-31 10:24:35');
+INSERT INTO `eb_store_order_status` VALUES (57, 'user_take_delivery', '用户已收货', '2022-12-31 10:25:15');
+INSERT INTO `eb_store_order_status` VALUES (58, 'cache_key_create_order', '订单生成', '2022-12-31 10:53:32');
+INSERT INTO `eb_store_order_status` VALUES (58, 'pay_success', '用户付款成功', '2022-12-31 10:54:16');
+INSERT INTO `eb_store_order_status` VALUES (58, 'express', '已发货 快递公司：申通快递, 快递单号：ST123456', '2022-12-31 10:54:27');
+INSERT INTO `eb_store_order_status` VALUES (58, 'user_take_delivery', '用户已收货', '2022-12-31 10:55:15');
 
 -- ----------------------------
 -- Table structure for eb_store_pink
@@ -3192,7 +3274,7 @@ CREATE TABLE `eb_store_pink`  (
   `nickname` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '用户昵称',
   `avatar` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '用户头像',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '拼团表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '拼团表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_pink
@@ -3203,6 +3285,10 @@ INSERT INTO `eb_store_pink` VALUES (3, 5, 'order41764166247350427980610', 17, 1,
 INSERT INTO `eb_store_pink` VALUES (4, 6, 'order31544166247364970215844', 18, 1, 324.00, 4, 3, 2, 324.00, 1662473868495, 1662473958143, 3, 0, 0, 2, 0, '54caafbb7471', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg');
 INSERT INTO `eb_store_pink` VALUES (5, 3, 'order47901166288809914642559', 42, 1, 10599.00, 5, 9, 2, 8599.00, 1662888180158, 1662891780158, 0, 0, 0, 3, 0, 'aa9fa7e7b604', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg');
 INSERT INTO `eb_store_pink` VALUES (6, 7, 'order72480166289638084432221', 43, 1, 10599.00, 5, 9, 2, 8599.00, 1662896471724, 1662900071724, 0, 0, 0, 3, 0, '6da71372e041', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg');
+INSERT INTO `eb_store_pink` VALUES (7, 11, 'order22210167241535649938024', 52, 1, 4499.00, 6, 11, 2, 4099.00, 1672415393438, 1672418993438, 0, 0, 0, 2, 0, 'haha', 'crmebimage/public/maintain/2022/12/30/8409f8292ea54244ad1bcb9c0145eaabxeestj6js8.png');
+INSERT INTO `eb_store_pink` VALUES (8, 15, 'order59954167241571106160075', 53, 1, 4099.00, 6, 11, 2, 4099.00, 1672415743891, 1672418993438, 7, 0, 0, 2, 0, '33b504213024', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg');
+INSERT INTO `eb_store_pink` VALUES (9, 17, 'order76001167244814499554855', 55, 1, 3499.00, 7, 12, 2, 3499.00, 1672448162923, 1672451762923, 0, 0, 0, 2, 0, 'ha', 'crmebimage/public/maintain/2022/12/31/e21ade54946d4c0080f2cac84447ec53pbzgf0rbpv.png');
+INSERT INTO `eb_store_pink` VALUES (10, 15, 'order48660167244821086152429', 56, 1, 3799.00, 7, 12, 2, 3499.00, 1672448238921, 1672451762923, 9, 0, 0, 2, 0, '33b504213024', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg');
 
 -- ----------------------------
 -- Table structure for eb_store_product
@@ -3264,7 +3350,7 @@ CREATE TABLE `eb_store_product`  (
   INDEX `sales`(`sales`) USING BTREE,
   INDEX `add_time`(`add_time`) USING BTREE,
   INDEX `is_postage`(`is_postage`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品表' ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品表' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of eb_store_product
@@ -3275,10 +3361,13 @@ INSERT INTO `eb_store_product` VALUES (3, 0, 'crmebimage/public/maintain/2021/12
 INSERT INTO `eb_store_product` VALUES (4, 0, 'crmebimage/public/maintain/2021/12/25/3ed152917e3f4f7faa9414050b6cab49vuadulntb8.jpg', '[\"crmebimage/public/maintain/2021/12/25/3ed152917e3f4f7faa9414050b6cab49vuadulntb8.jpg\"]', 'CAMILA&KORALI品牌包包女包斜挎单肩小包女式', 'CAMILA&KORALI品牌包包女包斜挎单肩小包女式', 'CAMILA&KORALI品牌包包女包斜挎单肩小包女式', '', '534,289,290,300,302', 116.00, 0.00, 156.00, 0.00, '件', 0, 0, 289, 1, 1, 1, 1, 1, 1640408296, 0, 0, 0, 0, 26.00, 0, NULL, 0, 0, 86, 10, '', '', '', 1, 0, '0,1,2,3', '', 0);
 INSERT INTO `eb_store_product` VALUES (5, 0, 'crmebimage/public/maintain/2021/12/25/f65ef5469f3a479497a710fb288d115cvl5imkvpo8.jpg', '[\"crmebimage/public/maintain/2021/12/25/f65ef5469f3a479497a710fb288d115cvl5imkvpo8.jpg\"]', 'LAORENTOU包包女包牛皮单肩女士包包奢侈品蓝色【礼盒装】', 'LAORENTOU包包女包牛皮单肩女士包包奢侈品蓝色【礼盒装】', 'LAORENTOU包包女包牛皮单肩女士包包奢侈品蓝色【礼盒装】', '', '246,248,258,488,288,289,300,302', 115.00, 0.00, 145.00, 0.00, '件', 0, 7, 992, 1, 1, 1, 1, 1, 1640408403, 0, 0, 0, 0, 15.00, 0, NULL, 0, 0, 99, 9, '', '', '', 1, 0, '0,1,2,3', '', 0);
 INSERT INTO `eb_store_product` VALUES (6, 0, 'crmebimage/public/maintain/2021/12/25/fef1aee22a04466d93693f5791d44bfd2rsm469mcr.jpg', '[\"crmebimage/public/maintain/2021/12/25/fef1aee22a04466d93693f5791d44bfd2rsm469mcr.jpg\"]', '第一江南 西湖龙井茶叶礼盒 明前特级龙井绿茶【至臻献礼200g】礼盒装', '第一江南 西湖龙井茶叶礼盒 明前特级龙井绿茶【至臻献礼200g】礼盒装', '第一江南 西湖龙井茶叶礼盒 明前特级龙井绿茶【至臻献礼200g】礼盒装', '', '246,248,258,488', 1588.00, 0.00, 1688.00, 0.00, '件', 0, 0, 999, 1, 1, 1, 1, 1, 1640408500, 0, 0, 0, 0, 300.00, 0, NULL, 0, 0, 666, 25, '', '', '', 1, 0, '0,1,2,3', '', 0);
-INSERT INTO `eb_store_product` VALUES (7, 0, 'crmebimage/public/maintain/2021/12/25/37382cca048b4011bdbacd3cbbe0814daw1o5x0tco.jpg', '[\"crmebimage/public/maintain/2021/12/25/37382cca048b4011bdbacd3cbbe0814daw1o5x0tco.jpg\"]', '车载小鹿首饰架摆件鹿角树形耳钉首饰展示架耳环架手链饰品收纳首饰挂件 白色', '车载小鹿首饰架摆件鹿角树形耳钉首饰展示架耳环架手链饰品收纳首饰挂件 白色', '车载小鹿首饰架摆件鹿角树形耳钉首饰展示架耳环架手链饰品收纳首饰挂件 白色', '', '534,290,300,302', 13.00, 0.00, 18.00, 0.00, '个', 0, 4, 1529, 1, 1, 1, 1, 1, 1640408617, 0, 0, 0, 0, 5.00, 0, NULL, 0, 0, 46, 38, '', '', '', 1, 1, '0,1,2,3', '', 0);
-INSERT INTO `eb_store_product` VALUES (8, 0, 'crmebimage/public/maintain/2021/12/25/7a6475bba07c47bb98e5db0e0d21c8ebq5sw2kijlc.jpg', '[\"crmebimage/public/maintain/2021/12/25/7a6475bba07c47bb98e5db0e0d21c8ebq5sw2kijlc.jpg\"]', '兰蔻（LANCOME）口红196 全新菁纯丝绒雾面唇膏 化妆品礼盒', '兰蔻（LANCOME）口红196 全新菁纯丝绒雾面唇膏 化妆品礼盒', '兰蔻（LANCOME）口红196 全新菁纯丝绒雾面唇膏 化妆品礼盒', '', '246,248,258,488,291,292,293,294,295,296', 787.00, 0.00, 197.00, 0.00, '件', 0, 3, 686, 1, 1, 1, 1, 1, 1640408735, 0, 0, 0, 0, 212.00, 0, NULL, 0, 0, 66, 16, '', '', '', 1, 0, '0,1,2,3', '', 0);
-INSERT INTO `eb_store_product` VALUES (9, 0, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '[\"crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg\",\"crmebimage/public/content/2022/09/07/729aa98283634d9aab124414eab508cbaahj1jwdlr.jpg\",\"crmebimage/public/content/2022/09/07/fb8d4a6232ff4a1ba9fd91fe588db9aevfl27uv7cy.jpg\"]', 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', '苹果手机', '', '297', 8999.00, 0.00, 8999.00, 0.00, '部', 0, 7, 5987, 1, 1, 1, 1, 1, 1662556610, 0, 0, 0, 0, 5000.00, 0, NULL, 1, 0, 0, 17, '', '', '', 1, 1, '0,1,2,3', '', 0);
-INSERT INTO `eb_store_product` VALUES (10, 0, 'crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg', '[\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\",\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\",\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\",\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\"]', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', '', '297', 919.00, 0.00, 919.00, 0.00, '部', 1, 1, 5993, 1, 1, 1, 1, 1, 1662719863, 0, 0, 0, 1000, 500.00, 0, NULL, 1, 0, 513, 22, '', '', '', 2, 1, '0,1,2,3', '', 0);
+INSERT INTO `eb_store_product` VALUES (7, 0, 'crmebimage/public/maintain/2021/12/25/37382cca048b4011bdbacd3cbbe0814daw1o5x0tco.jpg', '[\"crmebimage/public/maintain/2021/12/25/37382cca048b4011bdbacd3cbbe0814daw1o5x0tco.jpg\"]', '车载小鹿首饰架摆件鹿角树形耳钉首饰展示架耳环架手链饰品收纳首饰挂件 白色', '车载小鹿首饰架摆件鹿角树形耳钉首饰展示架耳环架手链饰品收纳首饰挂件 白色', '车载小鹿首饰架摆件鹿角树形耳钉首饰展示架耳环架手链饰品收纳首饰挂件 白色', '', '534,290,300,302', 13.00, 0.00, 18.00, 0.00, '个', 0, 4, 1529, 1, 1, 1, 1, 1, 1640408617, 0, 0, 0, 0, 5.00, 0, NULL, 0, 0, 46, 40, '', '', '', 1, 1, '0,1,2,3', '', 0);
+INSERT INTO `eb_store_product` VALUES (8, 0, 'crmebimage/public/maintain/2021/12/25/7a6475bba07c47bb98e5db0e0d21c8ebq5sw2kijlc.jpg', '[\"crmebimage/public/maintain/2021/12/25/7a6475bba07c47bb98e5db0e0d21c8ebq5sw2kijlc.jpg\"]', '兰蔻（LANCOME）口红196 全新菁纯丝绒雾面唇膏 化妆品礼盒', '兰蔻（LANCOME）口红196 全新菁纯丝绒雾面唇膏 化妆品礼盒', '兰蔻（LANCOME）口红196 全新菁纯丝绒雾面唇膏 化妆品礼盒', '', '246,248,258,488,291,292,293,294,295,296', 787.00, 0.00, 197.00, 0.00, '件', 0, 3, 686, 1, 1, 1, 1, 1, 1640408735, 0, 0, 0, 0, 212.00, 0, NULL, 0, 0, 66, 18, '', '', '', 1, 0, '0,1,2,3', '', 0);
+INSERT INTO `eb_store_product` VALUES (9, 0, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '[\"crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg\",\"crmebimage/public/content/2022/09/07/729aa98283634d9aab124414eab508cbaahj1jwdlr.jpg\",\"crmebimage/public/content/2022/09/07/fb8d4a6232ff4a1ba9fd91fe588db9aevfl27uv7cy.jpg\"]', 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', 'Apple/苹果 iPhone 13 Pro Max 手机5G全网通', '苹果手机', '', '297', 8999.00, 0.00, 8999.00, 0.00, '部', 0, 9, 5985, 1, 1, 1, 1, 1, 1662556610, 0, 0, 0, 0, 5000.00, 0, NULL, 1, 0, 0, 29, '', '', '', 1, 1, '0,1,2,3', '', 0);
+INSERT INTO `eb_store_product` VALUES (10, 0, 'crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg', '[\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\",\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\",\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\",\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\"]', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', '', '297', 919.00, 0.00, 919.00, 0.00, '部', 1, 2, 5992, 1, 1, 1, 1, 1, 1662719863, 0, 0, 0, 1000, 500.00, 0, NULL, 1, 0, 513, 29, '', '', '', 2, 1, '0,1,2,3', '', 0);
+INSERT INTO `eb_store_product` VALUES (11, 0, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '[\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\",\"crmebimage/public/content/2022/12/30/c8c5f3c8bc194ae88d63e7171ca9b448d3uqepqmm1.jpg\",\"crmebimage/public/content/2022/12/30/6d125e9214194df0a7e015b96132fe69hvh4p8ixsm.jpg\",\"crmebimage/public/content/2022/12/30/ad5c2181917f4ebe829545c5cb81a87f5chng9vic6.jpg\",\"crmebimage/public/content/2022/12/30/3da7e1f76f174631a180faefa14a613c3fab73j0no.jpg\",\"crmebimage/public/store/2022/12/30/bd1317cf521543c98cb014f8be82ee33fq6q11uu5k.jpg\"]', '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', '【热销】酷睿处理器，金属机身，高色域全面屏，物理防窥摄像头，接口丰富，大电池长续航（更多）', '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', '', '743', 4199.00, 0.00, 3599.00, 0.00, '台', 0, 3, 197, 1, 1, 1, 1, 1, 1672396747, 0, 0, 0, 400, 3599.00, 0, NULL, 1, 0, 999, 9, '', '', '', 3, 1, '0,1,2,3', '', 0);
+INSERT INTO `eb_store_product` VALUES (12, 0, 'crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg', '[\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\",\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\",\"crmebimage/public/content/2022/12/31/b382600be26b46bbb75fba2a7b0093cad9xbhhlpqg.jpg\",\"crmebimage/public/content/2022/12/31/0b276b0355ea467c80c7c1b5bd5424d7wuommvyvl4.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\"]', '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', '华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', '', '743', 3599.00, 0.00, 4099.00, 0.00, '台', 0, 4, 196, 1, 1, 1, 1, 1, 1672446538, 0, 0, 0, 400, 3499.00, 0, NULL, 1, 0, 0, 9, '', '', '', 3, 1, '0,1,2,3', '', 0);
+INSERT INTO `eb_store_product` VALUES (13, 0, 'crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg', '[\"crmebimage/public/content/2022/12/31/d6fe717a1e304e3b9d58bb2b498982a5mm9en4t9od.jpg\",\"crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg\",\"crmebimage/public/content/2022/12/31/fd13b29b6d134fd09027d59bdd360392a26msj4h0b.jpg\",\"crmebimage/public/content/2022/12/31/8b1340a688264f4cb45f7f45d3491587i7pfs5rk60.jpg\",\"crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg\"]', '惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑', '惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑', '惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑', '', '743', 4999.00, 0.00, 4000.00, 0.00, '台', 0, 1, 1998, 1, 1, 1, 1, 1, 1672455133, 0, 0, 0, 300, 3999.00, 0, NULL, 1, 0, 366, 2, '', '', '', 3, 1, '0,1,2,3', '', 0);
 
 -- ----------------------------
 -- Table structure for eb_store_product_attr
@@ -3293,7 +3382,7 @@ CREATE TABLE `eb_store_product_attr`  (
   `is_del` tinyint(1) NOT NULL DEFAULT 0 COMMENT '是否删除,0-否，1-是',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `store_id`(`product_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品属性表' ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 60 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品属性表' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of eb_store_product_attr
@@ -3343,6 +3432,20 @@ INSERT INTO `eb_store_product_attr` VALUES (42, 5, '存储大小', '128G,256G,51
 INSERT INTO `eb_store_product_attr` VALUES (43, 5, '颜色', '黑色,白色', 3, 0);
 INSERT INTO `eb_store_product_attr` VALUES (44, 6, '颜色', '格物致知蓝咖,格物致知红色', 1, 0);
 INSERT INTO `eb_store_product_attr` VALUES (45, 6, '尺码', '200*27cm,240*30', 1, 0);
+INSERT INTO `eb_store_product_attr` VALUES (46, 11, '版本', 'Air14,Air15', 0, 0);
+INSERT INTO `eb_store_product_attr` VALUES (47, 7, '版本', 'Air14,Air15', 1, 0);
+INSERT INTO `eb_store_product_attr` VALUES (48, 3, '版本', 'Air14,Air15', 2, 0);
+INSERT INTO `eb_store_product_attr` VALUES (49, 4, '内存大小', '128G,256G', 2, 0);
+INSERT INTO `eb_store_product_attr` VALUES (50, 4, '颜色', '黑色,银色,金色', 2, 0);
+INSERT INTO `eb_store_product_attr` VALUES (51, 6, '版本', 'Air14,Air15', 3, 0);
+INSERT INTO `eb_store_product_attr` VALUES (52, 12, '存储大小', '8G,16GG', 0, 0);
+INSERT INTO `eb_store_product_attr` VALUES (53, 8, '存储大小', '8G,16GG', 1, 0);
+INSERT INTO `eb_store_product_attr` VALUES (54, 5, '存储大小', '8G,16GG', 2, 0);
+INSERT INTO `eb_store_product_attr` VALUES (55, 6, '存储大小', '8G,16GG', 2, 0);
+INSERT INTO `eb_store_product_attr` VALUES (56, 7, '存储大小', '8G,16GG', 3, 0);
+INSERT INTO `eb_store_product_attr` VALUES (57, 13, '版本', 'Air14,Air15', 0, 0);
+INSERT INTO `eb_store_product_attr` VALUES (58, 9, '版本', 'Air14,Air15', 1, 0);
+INSERT INTO `eb_store_product_attr` VALUES (59, 7, '版本', 'Air14,Air15', 2, 0);
 
 -- ----------------------------
 -- Table structure for eb_store_product_attr_result
@@ -3390,7 +3493,7 @@ CREATE TABLE `eb_store_product_attr_value`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `unique`(`unique`, `suk`) USING BTREE,
   INDEX `store_id`(`product_id`, `suk`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 100 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品属性值表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 122 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品属性值表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_product_attr_value
@@ -3445,7 +3548,7 @@ INSERT INTO `eb_store_product_attr_value` VALUES (47, 9, '256G,黑色', 999, 0, 
 INSERT INTO `eb_store_product_attr_value` VALUES (48, 9, '256G,白色', 999, 0, 8999.00, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '', 5000.00, '', 8999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"256G\",\"颜色\":\"白色\"}', 1);
 INSERT INTO `eb_store_product_attr_value` VALUES (49, 9, '512G,黑色', 999, 0, 8999.00, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '', 5000.00, '', 8999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"512G\",\"颜色\":\"黑色\"}', 1);
 INSERT INTO `eb_store_product_attr_value` VALUES (50, 9, '512G,白色', 999, 0, 8999.00, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '', 5000.00, '', 8999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"512G\",\"颜色\":\"白色\"}', 1);
-INSERT INTO `eb_store_product_attr_value` VALUES (51, 9, '128G,黑色', 997, 2, 8999.00, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '', 5000.00, '', 8999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"128G\",\"颜色\":\"黑色\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (51, 9, '128G,黑色', 995, 4, 8999.00, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '', 5000.00, '', 8999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"128G\",\"颜色\":\"黑色\"}', 0);
 INSERT INTO `eb_store_product_attr_value` VALUES (52, 9, '128G,白色', 999, 0, 8999.00, 'crmebimage/public/content/2022/09/07/a374f0f6824744a5aef57702a5d90593j3rsix45a1.jpg', '', 5000.00, '', 8999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"128G\",\"颜色\":\"白色\"}', 0);
 INSERT INTO `eb_store_product_attr_value` VALUES (53, 9, '256G,黑色', 999, 0, 10999.00, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '', 6000.00, '', 10999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"256G\",\"颜色\":\"黑色\"}', 0);
 INSERT INTO `eb_store_product_attr_value` VALUES (54, 9, '256G,白色', 997, 2, 10999.00, 'crmebimage/public/content/2022/09/07/a374f0f6824744a5aef57702a5d90593j3rsix45a1.jpg', '', 6000.00, '', 10999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"256G\",\"颜色\":\"白色\"}', 0);
@@ -3481,7 +3584,7 @@ INSERT INTO `eb_store_product_attr_value` VALUES (83, 10, '128G,金色', 999, 0,
 INSERT INTO `eb_store_product_attr_value` VALUES (84, 10, '256G,黑色', 999, 0, 1099.00, '', '', 600.00, '', 1099.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"内存大小\":\"256G\",\"颜色\":\"黑色\"}', 1);
 INSERT INTO `eb_store_product_attr_value` VALUES (85, 10, '256G,银色', 999, 0, 1099.00, '', '', 600.00, '', 1099.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"内存大小\":\"256G\",\"颜色\":\"银色\"}', 1);
 INSERT INTO `eb_store_product_attr_value` VALUES (86, 10, '256G,金色', 999, 0, 1099.00, '', '', 600.00, '', 1099.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"内存大小\":\"256G\",\"颜色\":\"金色\"}', 1);
-INSERT INTO `eb_store_product_attr_value` VALUES (87, 10, '128G,黑色', 999, 0, 919.00, '', '', 500.00, '', 919.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"内存大小\":\"128G\",\"颜色\":\"黑色\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (87, 10, '128G,黑色', 998, 1, 919.00, '', '', 500.00, '', 919.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"内存大小\":\"128G\",\"颜色\":\"黑色\"}', 0);
 INSERT INTO `eb_store_product_attr_value` VALUES (88, 10, '128G,银色', 999, 0, 919.00, '', '', 500.00, '', 919.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"内存大小\":\"128G\",\"颜色\":\"银色\"}', 0);
 INSERT INTO `eb_store_product_attr_value` VALUES (89, 10, '128G,金色', 999, 0, 919.00, '', '', 500.00, '', 919.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"内存大小\":\"128G\",\"颜色\":\"金色\"}', 0);
 INSERT INTO `eb_store_product_attr_value` VALUES (90, 10, '256G,黑色', 999, 0, 1099.00, '', '', 600.00, '', 1099.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"内存大小\":\"256G\",\"颜色\":\"黑色\"}', 0);
@@ -3494,6 +3597,28 @@ INSERT INTO `eb_store_product_attr_value` VALUES (96, 5, '256G,黑色', 999, 0, 
 INSERT INTO `eb_store_product_attr_value` VALUES (97, 5, '512G,白色', 997, 1, 10599.00, 'crmebimage/public/content/2022/09/07/a374f0f6824744a5aef57702a5d90593j3rsix45a1.jpg', '', 7000.00, '', 11999.00, 1.00, 1.00, 0.00, 0.00, 3, 499, 500, '{\"存储大小\":\"512G\",\"颜色\":\"白色\"}', 0);
 INSERT INTO `eb_store_product_attr_value` VALUES (98, 5, '512G,黑色', 998, 1, 10599.00, 'crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg', '', 7000.00, '', 11999.00, 1.00, 1.00, 0.00, 0.00, 3, 499, 500, '{\"存储大小\":\"512G\",\"颜色\":\"黑色\"}', 0);
 INSERT INTO `eb_store_product_attr_value` VALUES (99, 6, '格物致知红色,200*27cm', 122, 1, 350.00, 'crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg', '', 100.00, '', 412.00, 0.50, 0.00, 0.00, 0.00, 1, 122, 123, '\"{\\\"颜色\\\":\\\"格物致知红色\\\",\\\"尺码\\\":\\\"200*27cm\\\"}\"', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (100, 11, 'Air14', 98, 2, 4199.00, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '', 3599.00, '', 3599.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"版本\":\"Air14\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (101, 11, 'Air15', 99, 1, 4599.00, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '', 3999.00, '', 3999.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"版本\":\"Air15\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (102, 7, 'Air14', 99, 0, 4099.00, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '', 3599.00, '', 3599.00, 1.00, 1.00, 0.00, 0.00, 1, 10, 10, '{\"版本\":\"Air14\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (103, 7, 'Air15', 100, 0, 4499.00, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '', 3999.00, '', 3999.00, 1.00, 1.00, 0.00, 0.00, 1, 8, 8, '{\"版本\":\"Air15\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (104, 3, 'Air14', 99, 0, 4199.00, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '', 3599.00, '', 3599.00, 1.00, 1.00, 0.00, 0.00, 2, 99, 0, '{\"版本\":\"Air14\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (105, 4, '128G,金色', 999, 0, 919.00, '', '', 500.00, '', 919.00, 1.00, 1.00, 0.00, 0.00, 2, 50, 0, '{\"内存大小\":\"128G\",\"颜色\":\"金色\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (106, 6, 'Air14', 98, 1, 4099.00, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '', 3599.00, '', 3599.00, 1.00, 1.00, 0.00, 0.00, 3, 79, 80, '{\"版本\":\"Air14\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (107, 6, 'Air15', 99, 1, 4499.00, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '', 3999.00, '', 3999.00, 1.00, 1.00, 0.00, 0.00, 3, 59, 60, '{\"版本\":\"Air15\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (108, 12, '8G', 99, 1, 3599.00, '', '', 3499.00, '', 4099.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"8G\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (109, 12, '16GG', 97, 3, 3899.00, '', '', 3599.00, '', 4499.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"存储大小\":\"16GG\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (110, 8, '16GG', 99, 0, 3799.00, '', '', 3599.00, '', 4499.00, 1.00, 1.00, 0.00, 0.00, 1, 50, 50, '{\"存储大小\":\"16GG\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (111, 8, '8G', 100, 0, 3499.00, '', '', 3499.00, '', 4099.00, 1.00, 1.00, 0.00, 0.00, 1, 50, 50, '{\"存储大小\":\"8G\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (112, 5, '8G', 100, 0, 3399.00, '', '', 3499.00, '', 4099.00, 1.00, 1.00, 0.00, 0.00, 2, 40, 0, '{\"存储大小\":\"8G\"}', 1);
+INSERT INTO `eb_store_product_attr_value` VALUES (113, 5, '16GG', 99, 0, 3899.00, '', '', 3599.00, '', 4499.00, 1.00, 1.00, 0.00, 0.00, 2, 1, 1, '{\"存储大小\":\"16GG\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (114, 6, '8G', 100, 0, 3599.00, '', '', 3499.00, '', 4099.00, 1.00, 1.00, 0.00, 0.00, 2, 30, 0, '{\"存储大小\":\"8G\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (115, 7, '16GG', 98, 1, 3799.00, '', '', 3599.00, '', 4499.00, 1.00, 1.00, 0.00, 0.00, 3, 98, 99, '{\"存储大小\":\"16GG\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (116, 7, '8G', 99, 1, 3499.00, '', '', 3499.00, '', 4099.00, 1.00, 1.00, 0.00, 0.00, 3, 99, 100, '{\"存储大小\":\"8G\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (117, 13, 'Air14', 998, 1, 4999.00, 'crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg', '', 3999.00, '', 4000.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"版本\":\"Air14\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (118, 13, 'Air15', 1000, 0, 5999.00, 'crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg', '', 4999.00, '', 5000.00, 1.00, 1.00, 0.00, 0.00, 0, 0, 0, '{\"版本\":\"Air15\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (119, 9, 'Air14', 998, 0, 4599.00, 'crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg', '', 3999.00, '', 4000.00, 1.00, 1.00, 0.00, 0.00, 1, 998, 998, '{\"版本\":\"Air14\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (120, 9, 'Air15', 1000, 0, 5599.00, 'crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg', '', 4999.00, '', 5000.00, 1.00, 1.00, 0.00, 0.00, 1, 1000, 1000, '{\"版本\":\"Air15\"}', 0);
+INSERT INTO `eb_store_product_attr_value` VALUES (121, 7, 'Air14', 998, 0, 4999.00, 'crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg', '', 3999.00, '', 4000.00, 1.00, 1.00, 0.00, 0.00, 2, 998, 0, '{\"版本\":\"Air14\"}', 0);
 
 -- ----------------------------
 -- Table structure for eb_store_product_cate
@@ -3538,7 +3663,7 @@ CREATE TABLE `eb_store_product_description`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `product_id`(`product_id`, `type`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品描述表' ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 58 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品描述表' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of eb_store_product_description
@@ -3566,6 +3691,19 @@ INSERT INTO `eb_store_product_description` VALUES (5, '<p><img class=\"wscnph\" 
 INSERT INTO `eb_store_product_description` VALUES (10, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/3b296903eb664d42aa5c4e4caca68b47hoh9roihtj.jpg\" /></p>', 0, 40);
 INSERT INTO `eb_store_product_description` VALUES (5, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/07/afbb73bf9efc43ed8842cadb3b3fb9b16kr0xokibk.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/07/729aa98283634d9aab124414eab508cbaahj1jwdlr.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/07/fb8d4a6232ff4a1ba9fd91fe588db9aevfl27uv7cy.jpg\" /></p>', 3, 42);
 INSERT INTO `eb_store_product_description` VALUES (6, '<p><img class=\"wscnph\" src=\"crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg\" /></p>', 1, 43);
+INSERT INTO `eb_store_product_description` VALUES (11, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/0489a1b721db4594ae0498534c580b55z277bcm6xv.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/9d5dd54e4ea04db18126af8f92902157oxmz8rny8x.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/fd52d06c97224addad43ca9518655283v7enjvsj2n.jpg\" /></p>', 0, 44);
+INSERT INTO `eb_store_product_description` VALUES (7, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/0489a1b721db4594ae0498534c580b55z277bcm6xv.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/9d5dd54e4ea04db18126af8f92902157oxmz8rny8x.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/fd52d06c97224addad43ca9518655283v7enjvsj2n.jpg\" /></p>', 1, 45);
+INSERT INTO `eb_store_product_description` VALUES (3, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/0489a1b721db4594ae0498534c580b55z277bcm6xv.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/9d5dd54e4ea04db18126af8f92902157oxmz8rny8x.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/fd52d06c97224addad43ca9518655283v7enjvsj2n.jpg\" /></p>', 2, 46);
+INSERT INTO `eb_store_product_description` VALUES (4, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/09/09/3b296903eb664d42aa5c4e4caca68b47hoh9roihtj.jpg\" /></p>', 2, 47);
+INSERT INTO `eb_store_product_description` VALUES (6, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/0489a1b721db4594ae0498534c580b55z277bcm6xv.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/9d5dd54e4ea04db18126af8f92902157oxmz8rny8x.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/30/fd52d06c97224addad43ca9518655283v7enjvsj2n.jpg\" /></p>', 3, 48);
+INSERT INTO `eb_store_product_description` VALUES (12, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/ddf613bba79b49458ba39b7e6b5f7a6bvhfwbgdhpc.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\" /></p>', 0, 49);
+INSERT INTO `eb_store_product_description` VALUES (8, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/ddf613bba79b49458ba39b7e6b5f7a6bvhfwbgdhpc.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\" /></p>', 1, 50);
+INSERT INTO `eb_store_product_description` VALUES (5, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/ddf613bba79b49458ba39b7e6b5f7a6bvhfwbgdhpc.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\" /></p>', 2, 52);
+INSERT INTO `eb_store_product_description` VALUES (6, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/ddf613bba79b49458ba39b7e6b5f7a6bvhfwbgdhpc.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\" /></p>', 2, 53);
+INSERT INTO `eb_store_product_description` VALUES (7, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/ddf613bba79b49458ba39b7e6b5f7a6bvhfwbgdhpc.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\" /></p>', 3, 54);
+INSERT INTO `eb_store_product_description` VALUES (13, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/6be21e468b9946b79cba887d89803875svm3jhn1sj.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/fd13b29b6d134fd09027d59bdd360392a26msj4h0b.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/8b1340a688264f4cb45f7f45d3491587i7pfs5rk60.jpg\" /></p>', 0, 55);
+INSERT INTO `eb_store_product_description` VALUES (9, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/6be21e468b9946b79cba887d89803875svm3jhn1sj.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/fd13b29b6d134fd09027d59bdd360392a26msj4h0b.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/8b1340a688264f4cb45f7f45d3491587i7pfs5rk60.jpg\" /></p>', 1, 56);
+INSERT INTO `eb_store_product_description` VALUES (7, '<p><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/6be21e468b9946b79cba887d89803875svm3jhn1sj.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/fd13b29b6d134fd09027d59bdd360392a26msj4h0b.jpg\" /><img class=\"wscnph\" src=\"crmebimage/public/content/2022/12/31/8b1340a688264f4cb45f7f45d3491587i7pfs5rk60.jpg\" /></p>', 2, 57);
 
 -- ----------------------------
 -- Table structure for eb_store_product_log
@@ -3610,7 +3748,7 @@ CREATE TABLE `eb_store_product_relation`  (
   UNIQUE INDEX `uid`(`uid`, `product_id`, `type`, `category`) USING BTREE,
   INDEX `type`(`type`) USING BTREE,
   INDEX `category`(`category`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品点赞和收藏表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品点赞和收藏表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_product_relation
@@ -3646,7 +3784,7 @@ CREATE TABLE `eb_store_product_reply`  (
   INDEX `product_score`(`product_score`) USING BTREE,
   INDEX `service_score`(`service_score`) USING BTREE,
   INDEX `uid+oid`(`uid`, `oid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '评论表' ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '评论表' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of eb_store_product_reply
@@ -3664,6 +3802,12 @@ INSERT INTO `eb_store_product_reply` VALUES (10, 0, 35, '51', 9, 'product', 5, 5
 INSERT INTO `eb_store_product_reply` VALUES (11, 0, 0, '10009', 10, 'product', 5, 5, '运行速度快，发货快', 'crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg', '欢迎下次再来！', 1662720172, 0, 1, '是我', 'crmebimage/public/store/2022/09/09/68da055241b149dd8e7aebcaf80f4e9ewxcmo86vkm.jpg', '2022-09-09 18:42:35', '2022-09-09 18:42:52', '128G,金色');
 INSERT INTO `eb_store_product_reply` VALUES (12, 0, 0, '11079', 9, 'product', 5, 5, '很好', 'crmebimage/public/store/2022/09/09/68da055241b149dd8e7aebcaf80f4e9ewxcmo86vkm.jpg', NULL, NULL, 0, 0, '天头', 'crmebimage/public/store/2022/09/09/68da055241b149dd8e7aebcaf80f4e9ewxcmo86vkm.jpg', '2022-09-10 22:36:34', '2022-09-10 22:36:34', '128G,白色');
 INSERT INTO `eb_store_product_reply` VALUES (13, 0, 37, '91', 10, 'product', 5, 5, '很满意！！', '', NULL, NULL, 0, 0, 'aa9fa7e7b604', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '2022-09-11 14:29:26', '2022-09-11 14:29:26', '256G,银色');
+INSERT INTO `eb_store_product_reply` VALUES (14, 0, 49, '51', 9, 'product', 5, 5, '非常火', 'crmebimage/public/product/2022/12/29/fc4eec198bb9473686fa7cf22b157a199kcgjb72k7.png', NULL, NULL, 0, 0, 'FAN', 'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKia61lMXIofwKsibtSnkRDC7dkD3JMibt3UqsHzuH9ZkuHsFQkJMpvTkO2lly7icaonw1v7JGXeLvTcg/132', '2022-12-29 16:04:27', '2022-12-29 16:04:27', '128G,黑色');
+INSERT INTO `eb_store_product_reply` VALUES (15, 0, 50, '51', 9, 'product', 5, 5, '我要用华为', 'crmebimage/public/product/2022/12/29/028a2bb833f24a3ca09d3a40dd2f1700xm3oaoo8i4.jpg', NULL, NULL, 0, 0, 'FAN', 'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKia61lMXIofwKsibtSnkRDC7dkD3JMibt3UqsHzuH9ZkuHsFQkJMpvTkO2lly7icaonw1v7JGXeLvTcg/132', '2022-12-29 16:27:56', '2022-12-29 16:27:56', '128G,黑色');
+INSERT INTO `eb_store_product_reply` VALUES (16, 0, 51, '100', 11, 'product', 4, 5, '非常火', 'crmebimage/public/product/2022/12/30/963dfd1f5b4f4af3a75b661c34c481cdyutdgk2d24.jpg', '欢迎下次光临', 1672398461, 0, 1, 'haha', 'crmebimage/public/maintain/2022/12/30/8409f8292ea54244ad1bcb9c0145eaabxeestj6js8.png', '2022-12-30 11:06:50', '2022-12-30 11:07:41', 'Air14');
+INSERT INTO `eb_store_product_reply` VALUES (17, 0, 54, '109', 12, 'product', 5, 5, 'DSVDDD', 'crmebimage/public/product/2022/12/31/ed9fb2e7472b4c2db5f59f07297ceef5mhpdkfnrvb.jpg', 'HHH', 1672447245, 0, 1, 'ha', 'crmebimage/public/maintain/2022/12/31/e21ade54946d4c0080f2cac84447ec53pbzgf0rbpv.png', '2022-12-31 00:40:27', '2022-12-31 00:40:45', '16GG');
+INSERT INTO `eb_store_product_reply` VALUES (18, 0, 57, '109', 12, 'product', 5, 5, 'YYY', 'crmebimage/public/product/2022/12/31/4bbd79b99c5d4d2ea2c93d4c0fb6d3534q9m3aax2s.jpg', 'SHOUDAO', 1672453532, 0, 1, '0ee2a66b3c95', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '2022-12-31 02:25:12', '2022-12-31 02:25:32', '16GG');
+INSERT INTO `eb_store_product_reply` VALUES (19, 0, 58, '117', 13, 'product', 5, 5, 'fnc', 'crmebimage/public/product/2022/12/31/ef16246824334cd7bf82da8fef4adcf3fnhw01cadz.jpg', 'new ', 1672455327, 0, 1, 'CCC6', 'crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg', '2022-12-31 02:54:59', '2022-12-31 02:55:27', 'Air14');
 
 -- ----------------------------
 -- Table structure for eb_store_product_rule
@@ -3674,7 +3818,7 @@ CREATE TABLE `eb_store_product_rule`  (
   `rule_name` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '规格名称',
   `rule_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '规格值',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品规则值(规格)表' ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品规则值(规格)表' ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of eb_store_product_rule
@@ -3683,6 +3827,7 @@ INSERT INTO `eb_store_product_rule` VALUES (1, '颜色', '[{\"value\":\"颜色\"
 INSERT INTO `eb_store_product_rule` VALUES (2, '围巾', '[{\"value\":\"颜色\",\"detail\":[\"格物致知蓝咖\",\"格物致知红色\"],\"inputVisible\":false},{\"value\":\"尺码\",\"detail\":[\"200*27cm\",\"240*30\"],\"inputVisible\":false}]');
 INSERT INTO `eb_store_product_rule` VALUES (3, '存储容量', '[{\"value\":\"存储大小\",\"detail\":[\"128G\",\"256G\",\"512G\"],\"inputVisible\":false}]');
 INSERT INTO `eb_store_product_rule` VALUES (4, '手机', '[{\"value\":\"内存大小\",\"detail\":[\"128G\",\"256G\",\"512G\",\"64G\"],\"inputVisible\":false},{\"value\":\"颜色\",\"detail\":[\"黑色\",\"银色\",\"金色\"],\"inputVisible\":false}]');
+INSERT INTO `eb_store_product_rule` VALUES (5, '电脑', '[{\"value\":\"版本\",\"detail\":[\"Air14\",\"Air15\"],\"inputVisible\":false}]');
 
 -- ----------------------------
 -- Table structure for eb_store_seckill
@@ -3728,7 +3873,7 @@ CREATE TABLE `eb_store_seckill`  (
   INDEX `add_time`(`create_time`) USING BTREE,
   INDEX `sort`(`sort`) USING BTREE,
   INDEX `is_postage`(`is_postage`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品秒杀产品表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '商品秒杀产品表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_store_seckill
@@ -3737,8 +3882,11 @@ INSERT INTO `eb_store_seckill` VALUES (1, 8, 'crmebimage/public/maintain/2021/12
 INSERT INTO `eb_store_seckill` VALUES (2, 5, 'crmebimage/public/maintain/2021/12/25/f65ef5469f3a479497a710fb288d115cvl5imkvpo8.jpg', '[\"crmebimage/public/maintain/2021/12/25/f65ef5469f3a479497a710fb288d115cvl5imkvpo8.jpg\"]', 'LAORENTOU包包女包牛皮单肩女士包包奢侈品蓝色【礼盒装】', 'LAORENTOU包包女包牛皮单肩女士包包奢侈品蓝色【礼盒装】', 95.00, 15.00, 145.00, 0.00, 0, 98, 1, '件', 0.00, NULL, '2022-09-05 00:00:00', '2022-10-31 00:00:00', '2021-12-25 13:10:53', 1, 0, 0, 1, 1, 2, 1, 0.00, 0.00, 98, 98, 0);
 INSERT INTO `eb_store_seckill` VALUES (3, 3, 'crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg', '[\"crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg\"]', '万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', '万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', 374.00, 100.00, 412.00, 0.00, 0, 1866, 0, '件', 0.00, NULL, '2022-09-05 00:00:00', '2022-10-31 00:00:00', '2021-12-29 11:46:20', 1, 0, 0, 1, 1, 1, 1, 0.00, 0.00, 1866, 1866, 1);
 INSERT INTO `eb_store_seckill` VALUES (4, 3, 'crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg', '[\"crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg\"]', '万事利秋冬新品时尚百搭经典真丝绒厚款围巾', '万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', 374.00, 100.00, 412.00, 0.00, 0, 1865, 1, '件', 0.00, NULL, '2022-09-05 00:00:00', '2022-10-31 00:00:00', '2021-12-29 11:47:03', 1, 0, 0, 1, 1, 4, 1, 0.00, 0.00, 1865, 1866, 1);
-INSERT INTO `eb_store_seckill` VALUES (5, 10, 'crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg', '[\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\",\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\",\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\",\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\"]', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', 919.00, 500.00, 919.00, 0.00, 1, 5994, 0, '部', 0.00, NULL, '2022-09-09 00:00:00', '2022-10-31 00:00:00', '2022-09-09 22:43:40', 0, 0, 0, 1, 1, 1, 1, 0.00, 0.00, 5994, 5994, 1);
+INSERT INTO `eb_store_seckill` VALUES (5, 10, 'crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg', '[\"crmebimage/public/content/2022/09/09/5dce91cf579c4e3980bcf05c234c3329yt8705s8xe.jpg\",\"crmebimage/public/content/2022/09/09/0a369917a72e4bd1886910bfed3b4c26dklm1nq4gz.jpg\",\"crmebimage/public/content/2022/09/09/23f69d357ac242f0b656d5d44d634aff7amnherd3b.jpg\",\"crmebimage/public/content/2022/09/09/83c8f04c210848eeb5d6df63f802f79b4bw3ddz4k6.jpg\"]', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', '小米Redmi红米Note11E 5G全网通手机 5000万像素拍照90Hz游戏大屏快充大电量八核智能手机', 919.00, 500.00, 919.00, 0.00, 1, 5994, 0, '部', 0.00, NULL, '2022-09-09 00:00:00', '2022-10-31 00:00:00', '2022-09-09 22:43:40', 1, 0, 0, 1, 1, 1, 1, 0.00, 0.00, 5994, 5994, 1);
 INSERT INTO `eb_store_seckill` VALUES (6, 3, 'crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg', '[\"crmebimage/public/maintain/2021/12/25/5486775d8cad4fd8adfc254d2e93857cn0wu5hq8f4.jpg\"]', '【秒杀】万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', '万事利秋冬新品时尚百搭经典真丝绒厚款围巾 格物致知蓝咖', 350.00, 100.00, 412.00, 0.00, 0, 122, 1, '件', 0.00, NULL, '2022-11-24 00:00:00', '2022-12-29 00:00:00', '2022-11-24 19:07:13', 1, 0, 0, 1, 1, 4, 1, 0.00, 0.00, 122, 123, 1);
+INSERT INTO `eb_store_seckill` VALUES (7, 11, 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '[\"crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg\",\"crmebimage/public/content/2022/12/30/c8c5f3c8bc194ae88d63e7171ca9b448d3uqepqmm1.jpg\",\"crmebimage/public/content/2022/12/30/6d125e9214194df0a7e015b96132fe69hvh4p8ixsm.jpg\",\"crmebimage/public/content/2022/12/30/ad5c2181917f4ebe829545c5cb81a87f5chng9vic6.jpg\",\"crmebimage/public/content/2022/12/30/3da7e1f76f174631a180faefa14a613c3fab73j0no.jpg\",\"crmebimage/public/store/2022/12/30/bd1317cf521543c98cb014f8be82ee33fq6q11uu5k.jpg\"]', '联想笔记本电脑 小新Air14 英特尔酷睿i5 14英寸轻薄本', '【热销】酷睿处理器，金属机身，高色域全面屏，物理防窥摄像头，接口丰富，大电池长续航（更多）', 4099.00, 3599.00, 3599.00, 0.00, 0, 18, 0, '台', 0.00, NULL, '2022-12-30 00:00:00', '2023-01-31 00:00:00', '2022-12-30 11:13:10', 1, 0, 0, 1, 1, 4, 3, 0.00, 0.00, 18, 18, 1);
+INSERT INTO `eb_store_seckill` VALUES (8, 12, 'crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg', '[\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg\",\"crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg\",\"crmebimage/public/content/2022/12/31/b382600be26b46bbb75fba2a7b0093cad9xbhhlpqg.jpg\",\"crmebimage/public/content/2022/12/31/0b276b0355ea467c80c7c1b5bd5424d7wuommvyvl4.jpg\",\"crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg\",\"crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg\"]', '【秒杀】华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', '【秒杀】华为笔记本电脑MateBook D 14 SE版 14英寸 11代酷睿 i5 锐炬显卡', 3499.00, 3499.00, 4099.00, 0.00, 0, 100, 0, '台', 0.00, NULL, '2022-12-31 00:00:00', '2023-01-31 00:00:00', '2022-12-31 00:43:41', 1, 0, 0, 1, 1, 1, 3, 0.00, 0.00, 100, 100, 1);
+INSERT INTO `eb_store_seckill` VALUES (9, 13, 'crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg', '[\"crmebimage/public/content/2022/12/31/d6fe717a1e304e3b9d58bb2b498982a5mm9en4t9od.jpg\",\"crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg\",\"crmebimage/public/content/2022/12/31/fd13b29b6d134fd09027d59bdd360392a26msj4h0b.jpg\",\"crmebimage/public/content/2022/12/31/8b1340a688264f4cb45f7f45d3491587i7pfs5rk60.jpg\",\"crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg\"]', '惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑', '惠普(HP)暗影精灵8Pro 16.1英寸游戏本电脑', 4599.00, 3999.00, 4000.00, 0.00, 0, 1998, 0, '台', 0.00, NULL, '2022-12-31 00:00:00', '2023-01-31 00:00:00', '2022-12-31 02:56:33', 1, 0, 0, 1, 1, 1, 3, 0.00, 0.00, 1998, 1998, 1);
 
 -- ----------------------------
 -- Table structure for eb_store_seckill_manger
@@ -3762,7 +3910,7 @@ CREATE TABLE `eb_store_seckill_manger`  (
 -- ----------------------------
 -- Records of eb_store_seckill_manger
 -- ----------------------------
-INSERT INTO `eb_store_seckill_manger` VALUES (1, '白领', 10, 13, NULL, '[{\"attId\":192,\"name\":\"eab9cdc74c4e4673acab70b801ee4612wnxgu98i0l.jpg\",\"attDir\":\"\",\"sattDir\":\"crmebimage/public/maintain/2021/12/25/e91ccd7e37294221bfdb7b43a42d8ed5hghg7nw0qb.jpg\",\"attSize\":\"118260\",\"attType\":\"jpeg\",\"pid\":0,\"imageType\":1,\"createTime\":\"2021-12-25 11:57:38\",\"updateTime\":\"2021-12-25 11:57:38\",\"isSelect\":true,\"num\":1}]', NULL, 1, '2021-06-03 10:48:58', '2021-12-25 13:07:21', 0);
+INSERT INTO `eb_store_seckill_manger` VALUES (1, '白领', 7, 13, NULL, '[{\"attId\":192,\"name\":\"eab9cdc74c4e4673acab70b801ee4612wnxgu98i0l.jpg\",\"attDir\":\"\",\"sattDir\":\"crmebimage/public/maintain/2021/12/25/e91ccd7e37294221bfdb7b43a42d8ed5hghg7nw0qb.jpg\",\"attSize\":\"118260\",\"attType\":\"jpeg\",\"pid\":0,\"imageType\":1,\"createTime\":\"2021-12-25 11:57:38\",\"updateTime\":\"2021-12-25 11:57:38\",\"isSelect\":true,\"num\":1}]', NULL, 1, '2021-06-03 10:48:58', '2022-12-31 00:42:46', 0);
 INSERT INTO `eb_store_seckill_manger` VALUES (2, '夜猫子', 13, 18, NULL, '[{\"attId\":191,\"name\":\"2702ff9ddd4e40ee97c957f07e9417b10hrby3rl2i.jpg\",\"attDir\":\"\",\"sattDir\":\"crmebimage/public/maintain/2021/12/25/9e97ddf78f804d50b985bdcf666478ebj76hbf3gpp.jpg\",\"attSize\":\"117394\",\"attType\":\"jpeg\",\"pid\":0,\"imageType\":1,\"createTime\":\"2021-12-25 11:57:38\",\"updateTime\":\"2021-12-25 11:57:38\",\"isSelect\":true,\"num\":2}]', NULL, 1, '2021-06-03 14:12:45', '2021-12-29 13:58:14', 0);
 INSERT INTO `eb_store_seckill_manger` VALUES (4, '下班拉', 18, 22, NULL, '[{\"attId\":193,\"name\":\"0638dad477de4f979f1d6f58aa960c41bvp53cy53v.jpg\",\"attDir\":\"\",\"sattDir\":\"crmebimage/public/maintain/2021/12/25/3598e8d0aa3f4bf1b61140daa0e36300k0te4s6z3j.jpg\",\"attSize\":\"149827\",\"attType\":\"jpeg\",\"pid\":0,\"imageType\":1,\"createTime\":\"2021-12-25 11:57:38\",\"updateTime\":\"2021-12-25 11:57:38\",\"localImg\":\"\",\"isSelect\":true,\"num\":1}]', NULL, 1, '2021-07-17 17:46:35', '2021-12-25 13:07:11', 0);
 
@@ -3793,8 +3941,8 @@ CREATE TABLE `eb_system_admin`  (
 -- ----------------------------
 -- Records of eb_system_admin
 -- ----------------------------
-INSERT INTO `eb_system_admin` VALUES (1, 'admin', 'L8qdg72wbeQ=', '超管', '1', '127.0.0.1', '2022-09-10 10:45:34', '2021-07-16 17:59:12', 538, 1, 1, 0, '11111111111', 0);
-INSERT INTO `eb_system_admin` VALUES (2, 'guest', 'q/PErDQ8ihc=', '普通用户', '5', '127.0.0.1', '2022-09-10 17:38:08', '2021-06-09 19:21:42', 347, 1, 1, 0, '18888888888', 0);
+INSERT INTO `eb_system_admin` VALUES (1, 'admin', '//ndw1MYmyGXtDMdxK9a7A==', '超管', '1', '27.17.154.192', '2022-12-29 11:53:08', '2021-07-16 17:59:12', 545, 1, 1, 0, '11111111111', 0);
+INSERT INTO `eb_system_admin` VALUES (2, 'guest', 'TZ2p1lxG0dtZWFnuoxoMFg==', '普通用户', '5', '171.113.176.163', '2022-12-29 11:53:26', '2021-06-09 19:21:42', 348, 1, 1, 0, '18888888888', 0);
 
 -- ----------------------------
 -- Table structure for eb_system_attachment
@@ -3812,7 +3960,7 @@ CREATE TABLE `eb_system_attachment`  (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`att_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 334 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '附件管理表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 374 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '附件管理表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_system_attachment
@@ -4084,9 +4232,6 @@ INSERT INTO `eb_system_attachment` VALUES (266, '64edb94f67fd46dd9031995ef2be86f
 INSERT INTO `eb_system_attachment` VALUES (267, '20210730115215.gif', '', 'crmebimage/public/maintain/2021/12/25/9deb872da95c42d2bf8c432075153b1egrrxlb666p.gif', '410412', 'gif', 740, 1, '2021-12-25 22:23:16', '2021-12-25 22:23:16');
 INSERT INTO `eb_system_attachment` VALUES (268, '20210730115214.gif', '', 'crmebimage/public/maintain/2021/12/25/ca4e301ed76a44f8aa23e70b7df107b8v26l2p79u3.gif', '360926', 'gif', 740, 1, '2021-12-25 22:25:04', '2021-12-25 22:25:04');
 INSERT INTO `eb_system_attachment` VALUES (269, '20210730115213.gif', '', 'crmebimage/public/maintain/2021/12/25/96cff8171dc8423ebd23559d0b14c8e8mv9d8a0iqw.gif', '340527', 'gif', 740, 1, '2021-12-25 22:26:43', '2021-12-25 22:26:43');
-INSERT INTO `eb_system_attachment` VALUES (270, '微信图片_20211123105919.png', '', 'crmebimage/public/maintain/2021/12/30/6636e07d913c40638753f2141440b8667x3wjapar7.png', '372090', 'png', 0, 1, '2021-12-30 23:03:11', '2021-12-30 23:03:11');
-INSERT INTO `eb_system_attachment` VALUES (271, 'banner_.gif', '', 'crmebimage/public/maintain/2021/12/30/964c5c7f054341868eae1e897aeaeb79l1uwjxxw11.gif', '102097', 'gif', 0, 1, '2021-12-30 23:05:15', '2021-12-30 23:05:15');
-INSERT INTO `eb_system_attachment` VALUES (272, '微信图片_20211123105919.png', '', 'crmebimage/public/maintain/2021/12/30/a0015e0e7be446efb720879816e099d0qkmvy7t5bd.png', '372090', 'png', 0, 1, '2021-12-30 23:06:01', '2021-12-30 23:06:01');
 INSERT INTO `eb_system_attachment` VALUES (273, '凡购 Logo.png', '', 'crmebimage/public/content/2022/09/05/f86aee85ec7144dda6ec012d95d0c8daicybjfl9gw.png', '11457', 'png', 0, 2, '2022-09-05 19:42:23', '2022-09-05 19:42:23');
 INSERT INTO `eb_system_attachment` VALUES (274, '凡购 Logo.png', '', 'crmebimage/public/content/2022/09/05/75f396c8f257417b932347c07276a7416i5dhbzhhy.png', '11457', 'png', 719, 2, '2022-09-05 19:44:36', '2022-09-05 19:44:36');
 INSERT INTO `eb_system_attachment` VALUES (275, 'Twitter Post.png', '', 'crmebimage/public/content/2022/09/05/6e587efa577e4aee858db9e53144cbd6q1wxd319z6.png', '47841', 'png', 739, 2, '2022-09-05 19:45:17', '2022-09-05 19:45:17');
@@ -4148,6 +4293,43 @@ INSERT INTO `eb_system_attachment` VALUES (330, '商品导出_202211241701575820
 INSERT INTO `eb_system_attachment` VALUES (331, '商品导出_20221124171442314603279.xlsx', '', 'file/public/excel/2022/11/24/d7f0b8a6bc8e49579dd3e1ac1711b9771uzrb7c2ej.xlsx', '5275', 'application/octet-stream', 0, 2, '2022-11-24 17:21:58', '2022-11-24 17:21:58');
 INSERT INTO `eb_system_attachment` VALUES (332, '商品导出_20221124171621313095592.xlsx', '', 'file/public/excel/2022/11/24/269a78ea090d48179463b226ecab0fea9xsqnb98bj.xlsx', '5275', 'application/octet-stream', 0, 2, '2022-11-24 17:21:59', '2022-11-24 17:21:59');
 INSERT INTO `eb_system_attachment` VALUES (333, 'code.png', '', 'crmebimage/public/product/2022/11/24/0dde508a599b4639b27407c0f942acdbxim0aw3nzx.png', '7381', 'png', 1, 2, '2022-11-24 19:01:27', '2022-11-24 19:01:27');
+INSERT INTO `eb_system_attachment` VALUES (335, 'new.png', '', 'crmebimage/public/product/2022/12/29/fc4eec198bb9473686fa7cf22b157a199kcgjb72k7.png', '45249', 'png', 1, 2, '2022-12-29 16:04:18', '2022-12-29 16:04:18');
+INSERT INTO `eb_system_attachment` VALUES (338, 'd3d1a1a5a226139b.jpg', '', 'crmebimage/public/maintain/2022/12/29/eed1489625a0459f8541839cf104f3533vgexuaodz.jpg', '26522', 'jpeg', 0, 2, '2022-12-29 16:22:56', '2022-12-29 16:22:56');
+INSERT INTO `eb_system_attachment` VALUES (339, 'd3d1a1a5a226139b.jpg', '', 'crmebimage/public/product/2022/12/29/028a2bb833f24a3ca09d3a40dd2f1700xm3oaoo8i4.jpg', '26522', 'jpeg', 1, 2, '2022-12-29 16:27:46', '2022-12-29 16:27:46');
+INSERT INTO `eb_system_attachment` VALUES (340, 'new.png', '', 'crmebimage/public/maintain/2022/12/30/8409f8292ea54244ad1bcb9c0145eaabxeestj6js8.png', '45249', 'png', 0, 2, '2022-12-30 10:18:40', '2022-12-30 10:18:40');
+INSERT INTO `eb_system_attachment` VALUES (341, 'b91c5bdaf6918ffa.jpg', '', 'crmebimage/public/store/2022/12/30/bd1317cf521543c98cb014f8be82ee33fq6q11uu5k.jpg', '53516', 'jpeg', 0, 2, '2022-12-30 10:29:59', '2022-12-30 10:29:59');
+INSERT INTO `eb_system_attachment` VALUES (342, '0a5bf29235f60863.jpg', '', 'crmebimage/public/content/2022/12/30/3da7e1f76f174631a180faefa14a613c3fab73j0no.jpg', '64505', 'jpeg', 0, 2, '2022-12-30 10:30:59', '2022-12-30 10:30:59');
+INSERT INTO `eb_system_attachment` VALUES (343, 'b91c5bdaf6918ffa.jpg', '', 'crmebimage/public/content/2022/12/30/ad5c2181917f4ebe829545c5cb81a87f5chng9vic6.jpg', '53516', 'jpeg', 0, 2, '2022-12-30 10:30:59', '2022-12-30 10:30:59');
+INSERT INTO `eb_system_attachment` VALUES (344, 'e9546a7480ce1741.jpg', '', 'crmebimage/public/content/2022/12/30/6d125e9214194df0a7e015b96132fe69hvh4p8ixsm.jpg', '64031', 'jpeg', 0, 2, '2022-12-30 10:31:01', '2022-12-30 10:31:01');
+INSERT INTO `eb_system_attachment` VALUES (345, 'f5bd0446e0d03273.jpg', '', 'crmebimage/public/content/2022/12/30/c8c5f3c8bc194ae88d63e7171ca9b448d3uqepqmm1.jpg', '59629', 'jpeg', 0, 2, '2022-12-30 10:31:01', '2022-12-30 10:31:01');
+INSERT INTO `eb_system_attachment` VALUES (346, '04b99c569ccc28d5.jpg', '', 'crmebimage/public/content/2022/12/30/9fa39d7ab0594f4eb403f1c23c4b2cb1dr4xk7unzv.jpg', '60016', 'jpeg', 0, 2, '2022-12-30 10:31:02', '2022-12-30 10:31:02');
+INSERT INTO `eb_system_attachment` VALUES (347, 'c1f9eab2006423d6.jpg', '', 'crmebimage/public/content/2022/12/30/fd52d06c97224addad43ca9518655283v7enjvsj2n.jpg', '268635', 'jpeg', 0, 2, '2022-12-30 10:31:06', '2022-12-30 10:31:06');
+INSERT INTO `eb_system_attachment` VALUES (348, '26f580c312761731.jpg', '', 'crmebimage/public/content/2022/12/30/9d5dd54e4ea04db18126af8f92902157oxmz8rny8x.jpg', '318011', 'jpeg', 0, 2, '2022-12-30 10:31:08', '2022-12-30 10:31:08');
+INSERT INTO `eb_system_attachment` VALUES (349, 'b677da72cc9dfe86.jpg', '', 'crmebimage/public/content/2022/12/30/0489a1b721db4594ae0498534c580b55z277bcm6xv.jpg', '334481', 'jpeg', 0, 2, '2022-12-30 10:31:10', '2022-12-30 10:31:10');
+INSERT INTO `eb_system_attachment` VALUES (350, 'b91c5bdaf6918ffa.jpg', '', 'crmebimage/public/product/2022/12/30/963dfd1f5b4f4af3a75b661c34c481cdyutdgk2d24.jpg', '53516', 'jpeg', 1, 2, '2022-12-30 11:06:48', '2022-12-30 11:06:48');
+INSERT INTO `eb_system_attachment` VALUES (351, 'new.png', '', 'crmebimage/public/maintain/2022/12/31/d3122f90f0f04a1d9f68d027df60b1c8sy8gv4j6k5.png', '45249', 'png', 0, 2, '2022-12-31 00:14:31', '2022-12-31 00:14:31');
+INSERT INTO `eb_system_attachment` VALUES (352, 'new.png', '', 'crmebimage/public/maintain/2022/12/31/e21ade54946d4c0080f2cac84447ec53pbzgf0rbpv.png', '45249', 'png', 0, 2, '2022-12-31 00:23:33', '2022-12-31 00:23:33');
+INSERT INTO `eb_system_attachment` VALUES (353, '807454984d51f098.jpg', '', 'crmebimage/public/content/2022/12/31/dcef3b5743de4432a69a292773bd5b8e9fla7txub1.jpg', '48611', 'jpeg', 0, 2, '2022-12-31 00:25:28', '2022-12-31 00:25:28');
+INSERT INTO `eb_system_attachment` VALUES (354, '55770fe5899b150d.jpg', '', 'crmebimage/public/content/2022/12/31/9b66c386f03c4c329d59e967d967ecc33jrd5asf9z.jpg', '29765', 'jpeg', 0, 2, '2022-12-31 00:25:29', '2022-12-31 00:25:29');
+INSERT INTO `eb_system_attachment` VALUES (355, '23b7cc298942f883.jpg', '', 'crmebimage/public/content/2022/12/31/a3300689528c42b8b8674b05cb4fc513l09q30ncmg.jpg', '20536', 'jpeg', 0, 2, '2022-12-31 00:25:30', '2022-12-31 00:25:30');
+INSERT INTO `eb_system_attachment` VALUES (356, '31a46e0d6444f04b.jpg', '', 'crmebimage/public/content/2022/12/31/a798df1598514deb8d3cc4a035ae41ede5c3j7iji7.jpg', '46586', 'jpeg', 0, 2, '2022-12-31 00:25:32', '2022-12-31 00:25:32');
+INSERT INTO `eb_system_attachment` VALUES (357, 'ef8f555392315934.jpg', '', 'crmebimage/public/content/2022/12/31/d19f1d5000194931934306a3412ae926u9d729i682.jpg', '65083', 'jpeg', 0, 2, '2022-12-31 00:25:33', '2022-12-31 00:25:33');
+INSERT INTO `eb_system_attachment` VALUES (358, '534fa10d59ebfa53.jpg', '', 'crmebimage/public/content/2022/12/31/0b276b0355ea467c80c7c1b5bd5424d7wuommvyvl4.jpg', '327022', 'jpeg', 0, 2, '2022-12-31 00:25:33', '2022-12-31 00:25:33');
+INSERT INTO `eb_system_attachment` VALUES (359, 'ab09a951be5b7c5a.jpg', '', 'crmebimage/public/content/2022/12/31/b382600be26b46bbb75fba2a7b0093cad9xbhhlpqg.jpg', '37042', 'jpeg', 0, 2, '2022-12-31 00:25:35', '2022-12-31 00:25:35');
+INSERT INTO `eb_system_attachment` VALUES (360, 'b5ea70b5c3abc09f.jpg', '', 'crmebimage/public/content/2022/12/31/87942c9000624e03a70844693f987023b1t1gp5qv7.jpg', '36721', 'jpeg', 0, 2, '2022-12-31 00:25:37', '2022-12-31 00:25:37');
+INSERT INTO `eb_system_attachment` VALUES (361, 'fcac23d2fd518fcd.jpg', '', 'crmebimage/public/content/2022/12/31/29224613a5254dfe9a4082e88386b744c2lr5jq8e8.jpg', '40905', 'jpeg', 0, 2, '2022-12-31 00:25:39', '2022-12-31 00:25:39');
+INSERT INTO `eb_system_attachment` VALUES (362, 'c47db01709ca9ea8.jpg', '', 'crmebimage/public/content/2022/12/31/ddf613bba79b49458ba39b7e6b5f7a6bvhfwbgdhpc.jpg', '778935', 'jpeg', 0, 2, '2022-12-31 00:25:43', '2022-12-31 00:25:43');
+INSERT INTO `eb_system_attachment` VALUES (363, 'd09bc1847d86b537.jpg', '', 'crmebimage/public/product/2022/12/31/ed9fb2e7472b4c2db5f59f07297ceef5mhpdkfnrvb.jpg', '53587', 'jpeg', 1, 2, '2022-12-31 00:40:26', '2022-12-31 00:40:26');
+INSERT INTO `eb_system_attachment` VALUES (364, 'd09bc1847d86b537.jpg', '', 'crmebimage/public/product/2022/12/31/4bbd79b99c5d4d2ea2c93d4c0fb6d3534q9m3aax2s.jpg', '53587', 'jpeg', 1, 2, '2022-12-31 02:25:05', '2022-12-31 02:25:05');
+INSERT INTO `eb_system_attachment` VALUES (365, 'b2476e166ca15ac2.jpg', '', 'crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg', '65453', 'jpeg', 0, 2, '2022-12-31 02:48:57', '2022-12-31 02:48:57');
+INSERT INTO `eb_system_attachment` VALUES (366, '65af8e5efcca2cae.jpg', '', 'crmebimage/public/content/2022/12/31/8b1340a688264f4cb45f7f45d3491587i7pfs5rk60.jpg', '86569', 'jpeg', 0, 2, '2022-12-31 02:50:12', '2022-12-31 02:50:12');
+INSERT INTO `eb_system_attachment` VALUES (367, '9ea65af2f7db3a40.jpg', '', 'crmebimage/public/content/2022/12/31/fd13b29b6d134fd09027d59bdd360392a26msj4h0b.jpg', '60210', 'jpeg', 0, 2, '2022-12-31 02:50:12', '2022-12-31 02:50:12');
+INSERT INTO `eb_system_attachment` VALUES (368, 'b2476e166ca15ac2.jpg', '', 'crmebimage/public/content/2022/12/31/6a57ff811352410cbd410a4599858982xax1r0ifbk.jpg', '65453', 'jpeg', 0, 2, '2022-12-31 02:50:14', '2022-12-31 02:50:14');
+INSERT INTO `eb_system_attachment` VALUES (369, 'e354f4361a8bf74f.jpg', '', 'crmebimage/public/content/2022/12/31/d6fe717a1e304e3b9d58bb2b498982a5mm9en4t9od.jpg', '55090', 'jpeg', 0, 2, '2022-12-31 02:50:15', '2022-12-31 02:50:15');
+INSERT INTO `eb_system_attachment` VALUES (370, 'd77f105eb740ff88.jpg', '', 'crmebimage/public/content/2022/12/31/177d518930c94dddbc1fbe168c072fc9kzycbnyhdv.jpg', '590941', 'jpeg', 0, 2, '2022-12-31 02:50:23', '2022-12-31 02:50:23');
+INSERT INTO `eb_system_attachment` VALUES (371, 'd09bc1847d86b537.jpg', '', 'crmebimage/public/content/2022/12/31/578eeb23751949a7869cf47a4c6d1ab7iee0j5fsp8.jpg', '53587', 'jpeg', 0, 2, '2022-12-31 02:50:24', '2022-12-31 02:50:24');
+INSERT INTO `eb_system_attachment` VALUES (372, 'a7e331290fe17ff8.jpg', '', 'crmebimage/public/content/2022/12/31/6be21e468b9946b79cba887d89803875svm3jhn1sj.jpg', '682073', 'jpeg', 0, 2, '2022-12-31 02:50:27', '2022-12-31 02:50:27');
+INSERT INTO `eb_system_attachment` VALUES (373, 'b2476e166ca15ac2.jpg', '', 'crmebimage/public/product/2022/12/31/ef16246824334cd7bf82da8fef4adcf3fnhw01cadz.jpg', '65453', 'jpeg', 1, 2, '2022-12-31 02:54:58', '2022-12-31 02:54:58');
 
 -- ----------------------------
 -- Table structure for eb_system_city
@@ -8292,8 +8474,8 @@ INSERT INTO `eb_system_config` VALUES (7925, 'pay_alipay_geteway_url', 'pay_alip
 INSERT INTO `eb_system_config` VALUES (7926, 'pay_alipay_merchant_private_key', 'pay_alipay_merchant_private_key', 0, 'MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCnkotFFLYF1dldseFEl2Kuov6TWxMNH3hMql/3H6RNTaEHQWSpzoM6OErdXKl/gl7zOJHcTnrhVIyvN2LuUTRl82W4Nwmof/lEh6+YbG/4l++z8lS0k+YO1TLCj9x86qF6ECtUwKOrbXrWgsIDyhCYPWWFyh0bXQWx25RyQ09pLj4mkeNft6+3h80yXzxhnbPf5hXD0ac4Fac3dk6GF+3SdroTkmQ6uF/t4efrgxCyuiHkFdn7/EuxjfaxXtTT0ToanK7xyeYuOkvqM0SUHpjR4U/3MSwL4U5+f6H5oOucmHPmV7YG3UgzfS2b/M9gEwqjlS3gil5TT7yqs0wPVLOHAgMBAAECggEAQdpyRtyjx9lJieusxoLjshO2Dfy9mOukICTYf8p8jDCUtsA5Kg5RPeD/cszGg6idXeH+WGCzI7hRbU5L37Ij8Gjdsa5XalOYhxj3peP/gOdcuQ/jv+9berrILvPQR3sBqHGQRcdKysTEgGZ0jn6rVNjT++b411cQNNxBE0Jmg8OYrb/ecPMaqVAhqtaxdiRZwbvHXzav//Lej0VFl9neaZ17Jj1icW3maIoS+YsCF83/njwG26/IPvblan4rgM+YtS4Uy+OMInWJ9V8znw4Krh+TCSOm8PUjk8IYcK0y4miV/LpsoMLikX1oEp5RIbkgXtHWU4h1GcrOe9noq/6FGQKBgQDT2OpU/3GLwP/pobAfsEgU2Q/tn6MtenaJkxdwhtXC2LTQMrRKwGUR9PGQSJwglTn1EW/XfEa5sqgHVT/6oQIvh/2p5jTW2MBWrtGQ7m+JXleQMYKfHKhzttCIlk3epngEtkYTfI9PoU0PlS7Iwsqimpn5Tbt9+mQnq5NkAzgfawKBgQDKf1khDMEUe4meX9ibmx7u7puew2CHxPfnM0bp37wWSTo1JTz/hFJK1kYeKwm7HjSbv7d2kad57xUgHufBhy1LoY2JKmRslEoS3QqPNxjF4AnhuDJU8oV0mYbXR9CJBjHYTuNfGMRSNGBPU+yIm18wAT77yJrD+gQKic+eCVEPVQKBgQChpMO4s2iaMFuUkxDmPQXjEnT65XIHA4hrFNcvv1Jf6CafLfEvkHoOJ44if6TRn8unWPSzwVnd25ombj/xJuWaCvPcrZDn1l98RMwXADgO4vOBTKXUbnOCR536emVUXET7o3D48XQQWI2KNFSMT0V6qOiPt2Y2i9XcByjhiStLnQKBgHJqfkvkTvxpyRqJgXR6s4HBpICSWGqeaoxiNsFSv43AFnmM7uhZNb4/UCMfokHuET+nldwS9JQ6+K7Lh5ub64X+ZGCKaW/IYgpChwLg2MiFjE/TqezBk5KMZNojI7somuVjvakv702bdoecHdwaHjCbo6DUek4daEckEwFytjB5AoGBAITlZn3TyhWTnLZ+1kns+KTedDenoETBH+dMTlo1NIXOIB3DU1AMyjdeZ4EKtsiNddpUTtUPjnCVgR736oO1hKAZy22nO25vxzDgobO1D+/cvDEd9L3CAjo1QSA6MyQpbfQH/4ClrRgxqfN6RPLUQDh5dbJ5rF5YM0OCbE3zQNVF', 0, '2022-09-05 21:41:54', '2022-09-05 21:41:54');
 INSERT INTO `eb_system_config` VALUES (7927, 'pay_alipay_public_key', 'pay_alipay_public_key', 0, 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7AN/edSXyHaW38g3fdQSkl0zmscuyd5YJpYBqFQXhRJ8vij9nLpFBl55kiv/D/y2cC1ljd0wnxGfDa8/YAvpi98ZYwh1rVAFDk2e5OjUls0HNKos4XWiH3tATo+pCi67PsxPD0ZCXOjikyB4HGcRnQsTfNlAkjEzrfGBTOb9Nfy8L97oPgEABi4/EGl3L19S161gKPxuLKYOrRWNQC/PujtClMe1rRJvPt00ZXckFttrnjbJX1zBo8Rl9WcRIfglbYSLY8xDMmznlPNkvcKozvISlw0cHIZkcIdYj6dOd5jFWOKc6e/42hSxXM+7Y1qnpT8QGT40yBrtP5PCLHN4LwIDAQAB', 0, '2022-09-05 21:42:10', '2022-09-05 21:42:10');
 INSERT INTO `eb_system_config` VALUES (7928, 'pay_alipay_content_key', 'pay_alipay_content_key', 0, 'D8entyfafkkFwtMbUqj3Mw==', 0, '2022-09-05 21:43:01', '2022-09-05 21:43:01');
-INSERT INTO `eb_system_config` VALUES (7929, 'pay_alipay_return_url', 'pay_alipay_return_url', 0, 'http://localhost:8082/pages/user/index', 0, '2022-09-05 21:43:18', '2022-09-06 14:05:11');
-INSERT INTO `eb_system_config` VALUES (7930, 'pay_alipay_notify_url', 'pay_alipay_notify_url', 0, 'http://shuhongfan.51vip.biz:43656/api/front/pay/trade/notify', 0, '2022-09-05 21:43:45', '2022-11-24 18:59:15');
+INSERT INTO `eb_system_config` VALUES (7929, 'pay_alipay_return_url', 'pay_alipay_return_url', 0, 'http://47.113.178.187/pages/user/index', 0, '2022-09-05 21:43:18', '2022-12-29 12:04:39');
+INSERT INTO `eb_system_config` VALUES (7930, 'pay_alipay_notify_url', 'pay_alipay_notify_url', 0, 'http://47.113.178.187:8081/api/front/pay/trade/notify', 0, '2022-09-05 21:43:45', '2022-12-29 12:02:30');
 INSERT INTO `eb_system_config` VALUES (7931, 'ali_pay_status', 'ali_pay_status', 0, '1', 0, '2022-09-06 14:39:14', '2022-09-06 14:39:14');
 INSERT INTO `eb_system_config` VALUES (7943, 'crmeb_tongji_js', 'crmeb_tongji_js', 141, '', 0, '2022-09-07 09:52:16', '2022-09-07 09:52:16');
 INSERT INTO `eb_system_config` VALUES (7951, 'localUploadUrl', 'localUploadUrl', 108, 'https://127.0.0.1:8080', 0, '2022-09-07 16:32:02', '2022-09-07 16:32:02');
@@ -9648,13 +9830,13 @@ CREATE TABLE `eb_user`  (
   INDEX `level`(`level`) USING BTREE,
   INDEX `status`(`status`) USING BTREE,
   INDEX `is_promoter`(`is_promoter`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_user
 -- ----------------------------
 INSERT INTO `eb_user` VALUES (1, '13437569565', 'q8CxJXxT6opR9cw/LBKWmA==', '', '', '', '', NULL, '1', '', '1e3c8bb23e7a', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13437569565', '', '', 2053.00, 0.00, 0, 787, 0, 1, 2, 0, NULL, 'h5', 1, 1, 0, '', 0, '', '2022-08-31 03:25:57', '2022-09-06 14:25:16', '2022-09-07 10:52:17', NULL, '/0/', 0, NULL, 0, 'CN', '2022-09-08 10:23:00');
-INSERT INTO `eb_user` VALUES (2, '13437191068', 'BBFM4yv6QeVT+QyKSFTSKg==', '', '', '', '', NULL, '1', '', 'FAN', 'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKia61lMXIofwKsibtSnkRDC7dkD3JMibt3UqsHzuH9ZkuHsFQkJMpvTkO2lly7icaonw1v7JGXeLvTcg/132', '13437191068', '', '', 0.00, 0.00, 21998, 21998, 0, 1, 5, 0, '2022-09-02 03:13:15', 'routine', 1, 2, 0, ',,', 0, '', '2022-09-01 19:13:15', '2022-10-01 11:23:39', '2022-11-20 20:12:20', NULL, '/0/', 0, NULL, 0, 'CN', '2022-10-01 11:21:40');
+INSERT INTO `eb_user` VALUES (2, '13437191068', 'BBFM4yv6QeVT+QyKSFTSKg==', '', '', '', '', NULL, '1', '', 'FAN', 'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKia61lMXIofwKsibtSnkRDC7dkD3JMibt3UqsHzuH9ZkuHsFQkJMpvTkO2lly7icaonw1v7JGXeLvTcg/132', '13437191068', '', '', 0.00, 0.00, 39996, 49914, 0, 1, 5, 0, '2022-09-02 03:13:15', 'routine', 1, 6, 0, ',,', 0, '', '2022-09-01 19:13:15', '2022-12-29 16:27:48', '2022-12-31 08:05:48', NULL, '/0/', 0, NULL, 0, 'CN', '2022-10-01 11:21:40');
 INSERT INTO `eb_user` VALUES (3, '13452365965', 'b8T3fZAa1s5AgG74UvvKTg==', '', '', '', '', NULL, '1', '', 'aa9fa7e7b604', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13452365965', '', '', 0.00, 0.00, 43599, 53314, 1, 1, 5, 0, NULL, 'h5', 1, 9, 0, '', 0, '', '2022-09-06 21:10:58', '2022-09-11 14:28:01', '2022-09-11 10:06:00', NULL, '/0/', 0, NULL, 0, 'CN', '2022-09-08 10:41:09');
 INSERT INTO `eb_user` VALUES (4, '13432536596', 'cCbUYtKfhh8NMlcGIYzi1Q==', '', '', '', '', NULL, '1', '', 'a7145146f6f2', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13432536596', '', '', 0.00, 0.00, 0, 324, 0, 1, 1, 0, NULL, 'h5', 1, 1, 0, '', 0, '', '2022-09-06 21:33:30', '2022-09-06 21:33:30', '2022-09-07 11:39:17', NULL, '/0/', 0, NULL, 0, 'CN', '2022-09-08 10:41:05');
 INSERT INTO `eb_user` VALUES (5, '13435456589', 'UzgFvFkSLx1LahcV/pYtrw==', '', '', '', '', NULL, '1', '', '7092bbb662f7', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13435456589', '', '', 0.00, 0.00, 0, 327, 0, 1, 1, 0, NULL, 'h5', 1, 2, 0, '', 0, '', '2022-09-06 22:07:14', '2022-09-06 22:07:14', '2022-09-06 22:07:14', NULL, '/0/', 0, NULL, 0, 'CN', '2022-09-08 10:41:07');
@@ -9662,6 +9844,16 @@ INSERT INTO `eb_user` VALUES (6, '13456596536', '/B9aCKDchRSnGOkkAMpgXw==', '', 
 INSERT INTO `eb_user` VALUES (7, '13435656956', 'lBb9KuRKGpXNI4svVHzffw==', '', '', '', '', NULL, '', '', '6da71372e041', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13435656956', '', '', 1000.00, 0.00, 1000, 10599, 0, 1, 4, 0, NULL, 'h5', 1, 1, 0, '', 0, '', '2022-09-09 14:40:13', '2022-09-09 16:54:04', '2022-09-11 17:44:20', NULL, '/0/', 0, NULL, 0, 'CN', '2022-09-11 19:41:52');
 INSERT INTO `eb_user` VALUES (8, '13465695635', 'fdaX0tJSsoZRreHDk0rdOA==', '', '', '', '', NULL, '', '', '361b6b08567b', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13465695635', '', '', 0.00, 0.00, 0, 0, 0, 1, 0, 0, NULL, 'h5', 0, 0, 0, '', 0, '', '2022-11-20 19:00:35', '2022-11-20 19:00:34', '2022-11-20 19:00:35', NULL, '/0/', 0, NULL, 0, 'CN', NULL);
 INSERT INTO `eb_user` VALUES (9, '15465686563', '7KPw88T1ZcKdrs5/aqYAyg==', '', '', '', '', NULL, '', '', 'c453d4a51a9b', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '15465686563', '', '', 900.00, 0.00, 0, 1087, 0, 1, 3, 0, NULL, 'h5', 1, 2, 0, '', 0, '', '2022-11-24 18:40:20', '2022-11-24 18:40:20', '2022-11-24 18:40:20', NULL, '/0/', 0, NULL, 0, 'CN', '2022-11-24 18:44:44');
+INSERT INTO `eb_user` VALUES (10, '13435658564', 'pMFy1PbK50mFB3ByL5B2Og==', '', '', '', '', NULL, '', '', 'bd2a287e6659', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13435658564', '', '', 0.00, 0.00, 0, 0, 0, 1, 0, 0, NULL, 'h5', 0, 0, 0, '', 0, '', '2022-12-29 11:50:00', '2022-12-29 11:50:00', '2022-12-29 11:50:00', NULL, '/0/', 0, NULL, 0, 'CN', NULL);
+INSERT INTO `eb_user` VALUES (11, '13453659547', 'mQHNBXgzDtQ=', '', '', '', '', NULL, '', '', 'haha', 'crmebimage/public/maintain/2022/12/30/8409f8292ea54244ad1bcb9c0145eaabxeestj6js8.png', '13453659547', '', '', 550.00, 0.00, 4599, 8698, 0, 1, 4, 0, NULL, 'h5', 1, 2, 0, '', 0, '', '2022-12-30 10:14:42', '2022-12-30 11:06:07', '2022-12-30 10:21:25', NULL, '/0/', 0, NULL, 0, 'CN', '2022-12-30 11:04:07');
+INSERT INTO `eb_user` VALUES (12, '13434376767', 'Xrbe49hUDzlVShyX70uCYQ==', '', '', '', '', NULL, '', '', '07a5032e9050', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13434376767', '', '', 0.00, 0.00, 0, 0, 0, 1, 0, 0, NULL, 'h5', 0, 0, 0, '', 0, '', '2022-12-30 10:47:06', '2022-12-30 10:47:06', '2022-12-30 10:47:06', NULL, '/0/', 0, NULL, 0, 'CN', NULL);
+INSERT INTO `eb_user` VALUES (13, '15567899876', 'j/g4O1c/nT+iwl6z/HQGwg==', '', '', '', '', NULL, '', '', 'bb2582cb36a7', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '15567899876', '', '', 0.00, 0.00, 0, 0, 0, 1, 0, 0, NULL, 'h5', 0, 0, 0, '', 0, '', '2022-12-30 22:23:27', '2022-12-30 14:23:27', '2022-12-30 22:23:27', NULL, '/0/', 0, NULL, 0, 'CN', NULL);
+INSERT INTO `eb_user` VALUES (14, '15678565432', 'ew+e+5vQ+r//jee7xejxlg==', '', '', '', '', NULL, '', '', '18378a46059b', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '15678565432', '', '', 0.00, 0.00, 0, 0, 0, 1, 0, 0, NULL, 'h5', 0, 0, 0, '', 0, '', '2022-12-30 23:43:59', '2022-12-30 15:43:59', '2022-12-30 23:43:59', NULL, '/0/', 0, NULL, 0, 'CN', NULL);
+INSERT INTO `eb_user` VALUES (15, '15678998763', 'CIo0ZPoYxpNNX/6dGq5e1A==', '', '', '', '', NULL, '', '', '33b504213024', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '15678998763', '', '', 0.00, 0.00, 0, 7898, 0, 1, 4, 0, NULL, 'h5', 1, 2, 0, '', 0, '', '2022-12-30 23:53:05', '2022-12-30 15:53:05', '2022-12-30 23:53:05', NULL, '/0/', 0, NULL, 0, 'CN', '2022-12-30 23:56:38');
+INSERT INTO `eb_user` VALUES (16, '13435656586', 'XsQdya3HRtbNI4svVHzffw==', '', '', '', '', NULL, '', '', 'd169dc7e5836', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13435656586', '', '', 0.00, 0.00, 0, 0, 0, 1, 0, 0, NULL, 'h5', 0, 0, 0, '', 0, '', '2022-12-31 08:14:00', '2022-12-31 00:14:00', '2022-12-31 08:14:00', NULL, '/0/', 0, NULL, 0, 'CN', NULL);
+INSERT INTO `eb_user` VALUES (17, '13435656869', 'xBxtzZA/yUPNI4svVHzffw==', '', '', '', '', NULL, '', '', 'ha', 'crmebimage/public/maintain/2022/12/31/e21ade54946d4c0080f2cac84447ec53pbzgf0rbpv.png', '13435656869', '', '', 0.00, 0.00, 4299, 7398, 0, 1, 4, 0, NULL, 'h5', 1, 2, 0, '', 0, '', '2022-12-31 08:23:18', '2022-12-31 00:40:40', '2022-12-31 08:23:18', NULL, '/0/', 0, NULL, 0, 'CN', '2022-12-31 08:39:39');
+INSERT INTO `eb_user` VALUES (18, '13532363523', 'WwhMBMV1xal4liPTtLJIGw==', '', '', '', '', NULL, '', '', '0ee2a66b3c95', 'crmebimage/public/operation/2021/12/25/0427b90c74b64a03ae3e7e5c628ef7d69038aimgou.jpg', '13532363523', '', '', 0.00, 0.00, 4299, 3899, 0, 1, 3, 0, NULL, 'h5', 1, 1, 0, '', 0, '', '2022-12-31 10:21:46', '2022-12-31 02:25:16', '2022-12-31 10:21:46', NULL, '/0/', 0, NULL, 0, 'CN', '2022-12-31 10:24:15');
+INSERT INTO `eb_user` VALUES (19, '13465658038', 'ab2IOlLQ8EC2oTRaiwoxbw==', '', '', '', '', NULL, '', '', 'CCC6', 'crmebimage/public/maintain/2022/12/31/460b62b154f94f95ad7073d57522e824ri7vt4ui2u.jpg', '13465658038', '', '', 0.00, 0.00, 5299, 4999, 0, 1, 3, 0, NULL, 'h5', 1, 1, 0, '', 0, '', '2022-12-31 10:48:42', '2022-12-31 02:55:16', '2022-12-31 10:48:42', NULL, '/0/', 0, NULL, 0, 'CN', '2022-12-31 10:54:16');
 
 -- ----------------------------
 -- Table structure for eb_user_address
@@ -9688,7 +9880,7 @@ CREATE TABLE `eb_user_address`  (
   INDEX `uid`(`uid`) USING BTREE,
   INDEX `is_default`(`is_default`) USING BTREE,
   INDEX `is_del`(`is_del`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户地址表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户地址表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_user_address
@@ -9705,6 +9897,12 @@ INSERT INTO `eb_user_address` VALUES (9, 7, '王丽', '13435695698', '湖北省'
 INSERT INTO `eb_user_address` VALUES (10, 2, '张敏', '13435632659', '湖北省', '武汉市', 420825, '洪山区', '友谊大道532附6湖北省妇幼保健院徐东门诊部', 0, '0', '0', 1, 0, '2022-10-01 11:20:17', '2022-10-01 11:20:17');
 INSERT INTO `eb_user_address` VALUES (11, 9, '李斌', '15465686563', '湖北省', '武汉市', 420825, '洪山区', '友谊大道528千禧名苑', 0, '0', '0', 1, 0, '2022-11-24 18:41:01', '2022-11-24 18:41:01');
 INSERT INTO `eb_user_address` VALUES (12, 9, 'new', '13456565695', '湖北省', '孝感市', 434548, '孝南区', '学院路158号同大公寓22栋湖北工程学院新技术学院', 0, '0', '0', 0, 0, '2022-11-24 19:10:27', '2022-11-24 19:10:27');
+INSERT INTO `eb_user_address` VALUES (13, 10, '张三', '13453131313', '湖北省', '武汉市', 420825, '洪山区', '友谊大道532号江南花园', 0, '0', '0', 1, 0, '2022-12-29 11:50:38', '2022-12-29 11:50:38');
+INSERT INTO `eb_user_address` VALUES (14, 11, '张三', '13435323236', '北京市', '北京市', 2, '东城区', '朝阳门外大街2号中华人民共和国外交部', 0, '0', '0', 1, 0, '2022-12-30 11:01:49', '2022-12-30 11:01:49');
+INSERT INTO `eb_user_address` VALUES (15, 15, '李四', '15678998763', '湖北省', '孝感市', 434548, '孝南区', '交通大道272号湖北工程学院湖北工程学院明德楼', 0, '0', '0', 1, 0, '2022-12-30 15:55:05', '2022-12-30 15:55:07');
+INSERT INTO `eb_user_address` VALUES (16, 17, '张三', '13453131313', '湖北省', '武汉市', 145666, '洪山区', '珞狮路274号武汉理工大学升升学生公寓', 0, '0', '0', 0, 0, '2022-12-31 00:38:17', '2022-12-31 00:38:17');
+INSERT INTO `eb_user_address` VALUES (17, 18, '哈哈', '13435556556', '湖北省', '武汉市', 420825, '洪山区', '珞狮路122号武汉理工大学(南湖校区)', 0, '0', '0', 0, 0, '2022-12-31 02:23:03', '2022-12-31 02:23:03');
+INSERT INTO `eb_user_address` VALUES (18, 19, '张三', '13435356536', '湖北省', '武汉市', 182538, '洪山区', '珞狮路122号武汉理工大学(南湖校区)', 0, '0', '0', 1, 0, '2022-12-31 02:53:25', '2022-12-31 02:53:25');
 
 -- ----------------------------
 -- Table structure for eb_user_bill
@@ -9730,7 +9928,7 @@ CREATE TABLE `eb_user_bill`  (
   INDEX `add_time`(`create_time`) USING BTREE,
   INDEX `pm`(`pm`) USING BTREE,
   INDEX `type`(`category`, `type`, `link_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户账单表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户账单表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_user_bill
@@ -9767,6 +9965,19 @@ INSERT INTO `eb_user_bill` VALUES (29, 2, '44', 0, '购买商品', 'now_money', 
 INSERT INTO `eb_user_bill` VALUES (30, 9, '45', 0, '购买商品', 'now_money', 'pay_order', 737.00, 0.00, '支付737.00元购买商品', 1, '2022-11-24 18:44:43', '2022-11-24 18:44:43');
 INSERT INTO `eb_user_bill` VALUES (31, 9, '0', 1, '充值800.00,送100.00', 'now_money', '充值', 800.00, 900.00, '', 1, '2022-11-24 19:05:03', '2022-11-24 19:05:03');
 INSERT INTO `eb_user_bill` VALUES (32, 9, '46', 0, '购买商品', 'now_money', 'pay_order', 350.00, 900.00, '支付350.00元购买商品', 1, '2022-11-24 19:12:44', '2022-11-24 19:12:44');
+INSERT INTO `eb_user_bill` VALUES (33, 2, '48', 0, '购买商品', 'now_money', 'pay_order', 919.00, 0.00, '支付919.00元购买商品', 1, '2022-12-29 11:57:34', '2022-12-29 11:57:34');
+INSERT INTO `eb_user_bill` VALUES (34, 2, '49', 0, '购买商品', 'now_money', 'pay_order', 8999.00, 0.00, '支付8999.00元购买商品', 1, '2022-12-29 15:51:36', '2022-12-29 15:51:36');
+INSERT INTO `eb_user_bill` VALUES (35, 2, '49', 0, '购买商品', 'now_money', 'pay_order', 8999.00, 0.00, '支付8999.00元购买商品', 1, '2022-12-29 15:52:36', '2022-12-29 15:52:36');
+INSERT INTO `eb_user_bill` VALUES (36, 2, '50', 0, '购买商品', 'now_money', 'pay_order', 8999.00, 0.00, '支付8999.00元购买商品', 1, '2022-12-29 16:26:47', '2022-12-29 16:26:47');
+INSERT INTO `eb_user_bill` VALUES (37, 11, '51', 0, '购买商品', 'now_money', 'pay_order', 4199.00, 0.00, '支付4199.00元购买商品', 1, '2022-12-30 11:04:06', '2022-12-30 11:04:06');
+INSERT INTO `eb_user_bill` VALUES (38, 11, '52', 0, '购买商品', 'now_money', 'pay_order', 4499.00, 0.00, '支付4499.00元购买商品', 1, '2022-12-30 15:50:36', '2022-12-30 15:50:36');
+INSERT INTO `eb_user_bill` VALUES (39, 15, '53', 0, '购买商品', 'now_money', 'pay_order', 4099.00, 0.00, '支付4099.00元购买商品', 1, '2022-12-30 15:56:37', '2022-12-30 15:56:37');
+INSERT INTO `eb_user_bill` VALUES (40, 11, '0', 1, '充值500.00,送50.00', 'now_money', '充值', 500.00, 550.00, '', 1, '2022-12-31 00:09:13', '2022-12-31 00:09:13');
+INSERT INTO `eb_user_bill` VALUES (41, 17, '54', 0, '购买商品', 'now_money', 'pay_order', 3899.00, 0.00, '支付3899.00元购买商品', 1, '2022-12-31 00:39:38', '2022-12-31 00:39:38');
+INSERT INTO `eb_user_bill` VALUES (42, 17, '55', 0, '购买商品', 'now_money', 'pay_order', 3499.00, 0.00, '支付3499.00元购买商品', 1, '2022-12-31 00:56:38', '2022-12-31 00:56:38');
+INSERT INTO `eb_user_bill` VALUES (43, 15, '56', 0, '购买商品', 'now_money', 'pay_order', 3799.00, 0.00, '支付3799.00元购买商品', 1, '2022-12-31 00:57:39', '2022-12-31 00:57:39');
+INSERT INTO `eb_user_bill` VALUES (44, 18, '57', 0, '购买商品', 'now_money', 'pay_order', 3899.00, 0.00, '支付3899.00元购买商品', 1, '2022-12-31 02:24:15', '2022-12-31 02:24:15');
+INSERT INTO `eb_user_bill` VALUES (45, 19, '58', 0, '购买商品', 'now_money', 'pay_order', 4999.00, 0.00, '支付4999.00元购买商品', 1, '2022-12-31 02:54:16', '2022-12-31 02:54:16');
 
 -- ----------------------------
 -- Table structure for eb_user_brokerage_record
@@ -9823,7 +10034,7 @@ CREATE TABLE `eb_user_experience_record`  (
   INDEX `add_time`(`create_time`) USING BTREE,
   INDEX `type`(`type`) USING BTREE,
   INDEX `type_link`(`type`, `link_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户经验记录表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户经验记录表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_user_experience_record
@@ -9857,6 +10068,18 @@ INSERT INTO `eb_user_experience_record` VALUES (26, 2, 'order4253916645944283872
 INSERT INTO `eb_user_experience_record` VALUES (27, 2, 'order42539166459442838723672', 'order', 1, '用户订单付款成功', 10999, 21998, '用户付款成功增加10999经验', 1, '2022-10-01 11:22:41', '2022-10-01 11:22:39');
 INSERT INTO `eb_user_experience_record` VALUES (28, 9, 'order78838166928647851216021', 'order', 1, '用户订单付款成功', 737, 737, '用户付款成功增加737经验', 1, '2022-11-24 18:44:44', '2022-11-24 18:44:43');
 INSERT INTO `eb_user_experience_record` VALUES (29, 9, 'order60517166928823195290104', 'order', 1, '用户订单付款成功', 350, 1087, '用户付款成功增加350经验', 1, '2022-11-24 19:12:44', '2022-11-24 19:12:44');
+INSERT INTO `eb_user_experience_record` VALUES (30, 2, 'order14264167231497534324754', 'order', 1, '用户订单付款成功', 919, 22917, '用户付款成功增加919经验', 1, '2022-12-29 11:57:35', '2022-12-29 11:57:34');
+INSERT INTO `eb_user_experience_record` VALUES (31, 2, 'order75355167232903521457103', 'order', 1, '用户订单付款成功', 8999, 31916, '用户付款成功增加8999经验', 1, '2022-12-29 15:51:36', '2022-12-29 15:51:36');
+INSERT INTO `eb_user_experience_record` VALUES (32, 2, 'order75355167232903521457103', 'order', 1, '用户订单付款成功', 8999, 40915, '用户付款成功增加8999经验', 1, '2022-12-29 15:52:37', '2022-12-29 15:52:36');
+INSERT INTO `eb_user_experience_record` VALUES (33, 2, 'order30004167233111492329236', 'order', 1, '用户订单付款成功', 8999, 49914, '用户付款成功增加8999经验', 1, '2022-12-29 16:26:48', '2022-12-29 16:26:47');
+INSERT INTO `eb_user_experience_record` VALUES (34, 11, 'order22070167239816482636386', 'order', 1, '用户订单付款成功', 4199, 4199, '用户付款成功增加4199经验', 1, '2022-12-30 11:04:06', '2022-12-30 11:04:06');
+INSERT INTO `eb_user_experience_record` VALUES (35, 11, 'order22210167241535649938024', 'order', 1, '用户订单付款成功', 4499, 8698, '用户付款成功增加4499经验', 1, '2022-12-30 23:50:37', '2022-12-30 15:50:36');
+INSERT INTO `eb_user_experience_record` VALUES (36, 15, 'order59954167241571106160075', 'order', 1, '用户订单付款成功', 4099, 4099, '用户付款成功增加4099经验', 1, '2022-12-30 23:56:38', '2022-12-30 15:56:37');
+INSERT INTO `eb_user_experience_record` VALUES (37, 17, 'order85856167244712010458422', 'order', 1, '用户订单付款成功', 3899, 3899, '用户付款成功增加3899经验', 1, '2022-12-31 08:39:39', '2022-12-31 00:39:38');
+INSERT INTO `eb_user_experience_record` VALUES (38, 17, 'order76001167244814499554855', 'order', 1, '用户订单付款成功', 3499, 7398, '用户付款成功增加3499经验', 1, '2022-12-31 08:56:39', '2022-12-31 00:56:39');
+INSERT INTO `eb_user_experience_record` VALUES (39, 15, 'order48660167244821086152429', 'order', 1, '用户订单付款成功', 3799, 7898, '用户付款成功增加3799经验', 1, '2022-12-31 08:57:39', '2022-12-31 00:57:39');
+INSERT INTO `eb_user_experience_record` VALUES (40, 18, 'order58951167245338977791476', 'order', 1, '用户订单付款成功', 3899, 3899, '用户付款成功增加3899经验', 1, '2022-12-31 10:24:15', '2022-12-31 02:24:15');
+INSERT INTO `eb_user_experience_record` VALUES (41, 19, 'order95253167245521210365384', 'order', 1, '用户订单付款成功', 4999, 4999, '用户付款成功增加4999经验', 1, '2022-12-31 10:54:16', '2022-12-31 02:54:16');
 
 -- ----------------------------
 -- Table structure for eb_user_extract
@@ -9933,7 +10156,7 @@ CREATE TABLE `eb_user_integral_record`  (
   INDEX `add_time`(`create_time`) USING BTREE,
   INDEX `type`(`type`) USING BTREE,
   INDEX `type_link`(`type`, `link_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户积分记录表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 49 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户积分记录表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_user_integral_record
@@ -9969,6 +10192,23 @@ INSERT INTO `eb_user_integral_record` VALUES (28, 2, 'order425391664594428387236
 INSERT INTO `eb_user_integral_record` VALUES (29, 2, 'order42539166459442838723672', 'order', 1, '用户订单付款成功', 10999, 21998, '用户付款成功,订单增加10999积分', 3, 0, 1664594620496, '2022-10-01 11:22:40', '2022-10-01 11:23:41');
 INSERT INTO `eb_user_integral_record` VALUES (30, 9, 'order78838166928647851216021', 'order', 1, '用户订单付款成功', 737, 0, '用户付款成功,订单增加737积分', 1, 0, 0, '2022-11-24 18:44:43', '2022-11-24 18:44:43');
 INSERT INTO `eb_user_integral_record` VALUES (31, 9, 'order60517166928823195290104', 'order', 1, '用户订单付款成功', 350, 0, '用户付款成功,订单增加350积分', 1, 0, 0, '2022-11-24 19:12:44', '2022-11-24 19:12:44');
+INSERT INTO `eb_user_integral_record` VALUES (32, 2, 'order14264167231497534324754', 'order', 1, '用户订单付款成功', 919, 21998, '用户付款成功,订单增加919积分', 1, 0, 0, '2022-12-29 11:57:34', '2022-12-29 11:57:34');
+INSERT INTO `eb_user_integral_record` VALUES (33, 2, 'order14264167231497534324754', 'order', 1, '用户订单付款成功', 1000, 21998, '用户付款成功,商品增加1000积分', 1, 0, 0, '2022-12-29 11:57:34', '2022-12-29 11:57:34');
+INSERT INTO `eb_user_integral_record` VALUES (34, 2, 'order75355167232903521457103', 'order', 1, '用户订单付款成功', 8999, 30997, '用户付款成功,订单增加8999积分', 3, 0, 1672329155571, '2022-12-29 15:51:36', '2022-12-29 15:52:36');
+INSERT INTO `eb_user_integral_record` VALUES (35, 2, 'order75355167232903521457103', 'order', 1, '用户订单付款成功', 8999, 30997, '用户付款成功,订单增加8999积分', 1, 0, 0, '2022-12-29 15:52:36', '2022-12-29 15:52:36');
+INSERT INTO `eb_user_integral_record` VALUES (36, 2, 'order30004167233111492329236', 'order', 1, '用户订单付款成功', 8999, 39996, '用户付款成功,订单增加8999积分', 3, 0, 1672331267801, '2022-12-29 16:26:47', '2022-12-29 16:27:48');
+INSERT INTO `eb_user_integral_record` VALUES (37, 11, 'order22070167239816482636386', 'order', 1, '用户订单付款成功', 4199, 4199, '用户付款成功,订单增加4199积分', 3, 0, 1672398366514, '2022-12-30 11:04:06', '2022-12-30 11:06:07');
+INSERT INTO `eb_user_integral_record` VALUES (38, 11, 'order22070167239816482636386', 'order', 1, '用户订单付款成功', 400, 4599, '用户付款成功,商品增加400积分', 3, 0, 1672398366514, '2022-12-30 11:04:06', '2022-12-30 11:06:08');
+INSERT INTO `eb_user_integral_record` VALUES (39, 11, 'order22210167241535649938024', 'order', 1, '用户订单付款成功', 4499, 4599, '用户付款成功,订单增加4499积分', 1, 0, 0, '2022-12-30 23:50:36', '2022-12-30 15:50:36');
+INSERT INTO `eb_user_integral_record` VALUES (40, 15, 'order59954167241571106160075', 'order', 1, '用户订单付款成功', 4099, 0, '用户付款成功,订单增加4099积分', 1, 0, 0, '2022-12-30 23:56:37', '2022-12-30 15:56:37');
+INSERT INTO `eb_user_integral_record` VALUES (41, 17, 'order85856167244712010458422', 'order', 1, '用户订单付款成功', 3899, 3899, '用户付款成功,订单增加3899积分', 3, 0, 1672447237482, '2022-12-31 08:39:38', '2022-12-31 08:40:41');
+INSERT INTO `eb_user_integral_record` VALUES (42, 17, 'order85856167244712010458422', 'order', 1, '用户订单付款成功', 400, 4299, '用户付款成功,商品增加400积分', 3, 0, 1672447237482, '2022-12-31 08:39:38', '2022-12-31 08:40:41');
+INSERT INTO `eb_user_integral_record` VALUES (43, 17, 'order76001167244814499554855', 'order', 1, '用户订单付款成功', 3499, 4299, '用户付款成功,订单增加3499积分', 1, 0, 0, '2022-12-31 08:56:38', '2022-12-31 00:56:39');
+INSERT INTO `eb_user_integral_record` VALUES (44, 15, 'order48660167244821086152429', 'order', 1, '用户订单付款成功', 3799, 0, '用户付款成功,订单增加3799积分', 1, 0, 0, '2022-12-31 08:57:39', '2022-12-31 00:57:39');
+INSERT INTO `eb_user_integral_record` VALUES (45, 18, 'order58951167245338977791476', 'order', 1, '用户订单付款成功', 3899, 3899, '用户付款成功,订单增加3899积分', 3, 0, 1672453515052, '2022-12-31 10:24:15', '2022-12-31 10:25:16');
+INSERT INTO `eb_user_integral_record` VALUES (46, 18, 'order58951167245338977791476', 'order', 1, '用户订单付款成功', 400, 4299, '用户付款成功,商品增加400积分', 3, 0, 1672453515052, '2022-12-31 10:24:15', '2022-12-31 10:25:16');
+INSERT INTO `eb_user_integral_record` VALUES (47, 19, 'order95253167245521210365384', 'order', 1, '用户订单付款成功', 4999, 4999, '用户付款成功,订单增加4999积分', 3, 0, 1672455315108, '2022-12-31 10:54:16', '2022-12-31 10:55:16');
+INSERT INTO `eb_user_integral_record` VALUES (48, 19, 'order95253167245521210365384', 'order', 1, '用户订单付款成功', 300, 5299, '用户付款成功,商品增加300积分', 3, 0, 1672455315108, '2022-12-31 10:54:16', '2022-12-31 10:55:16');
 
 -- ----------------------------
 -- Table structure for eb_user_level
@@ -9989,7 +10229,7 @@ CREATE TABLE `eb_user_level`  (
   `expired_time` timestamp NULL DEFAULT NULL COMMENT '过期时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `id`(`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户等级记录表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户等级记录表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_user_level
@@ -10007,6 +10247,14 @@ INSERT INTO `eb_user_level` VALUES (10, 2, 4, 4, 1, '尊敬的用户 FAN, 在202
 INSERT INTO `eb_user_level` VALUES (11, 2, 5, 5, 1, '尊敬的用户 FAN, 在2022-10-01 11:22:40您升级为为钻石会员会员', 0, 0, 70, '2022-10-01 11:22:39', '2022-10-01 11:22:39', NULL);
 INSERT INTO `eb_user_level` VALUES (12, 9, 2, 2, 1, '尊敬的用户 c453d4a51a9b, 在2022-11-24 18:44:43您升级为为黄铜会员会员', 0, 0, 90, '2022-11-24 18:44:43', '2022-11-24 18:44:43', NULL);
 INSERT INTO `eb_user_level` VALUES (13, 9, 3, 3, 1, '尊敬的用户 c453d4a51a9b, 在2022-11-24 19:12:44您升级为为白银会员会员', 0, 0, 85, '2022-11-24 19:12:44', '2022-11-24 19:12:44', NULL);
+INSERT INTO `eb_user_level` VALUES (14, 11, 3, 3, 1, '尊敬的用户 haha, 在2022-12-30 11:04:06您升级为为白银会员会员', 0, 0, 85, '2022-12-30 11:04:06', '2022-12-30 11:04:06', NULL);
+INSERT INTO `eb_user_level` VALUES (15, 11, 4, 4, 1, '尊敬的用户 haha, 在2022-12-30 23:50:36您升级为为黄金会员会员', 0, 0, 80, '2022-12-30 15:50:36', '2022-12-30 15:50:36', NULL);
+INSERT INTO `eb_user_level` VALUES (16, 15, 3, 3, 1, '尊敬的用户 33b504213024, 在2022-12-30 23:56:37您升级为为白银会员会员', 0, 0, 85, '2022-12-30 15:56:37', '2022-12-30 15:56:37', NULL);
+INSERT INTO `eb_user_level` VALUES (17, 17, 3, 3, 1, '尊敬的用户 ha, 在2022-12-31 08:39:38您升级为为白银会员会员', 0, 0, 85, '2022-12-31 00:39:38', '2022-12-31 00:39:38', NULL);
+INSERT INTO `eb_user_level` VALUES (18, 17, 4, 4, 1, '尊敬的用户 ha, 在2022-12-31 08:56:39您升级为为黄金会员会员', 0, 0, 80, '2022-12-31 00:56:39', '2022-12-31 00:56:39', NULL);
+INSERT INTO `eb_user_level` VALUES (19, 15, 4, 4, 1, '尊敬的用户 33b504213024, 在2022-12-31 08:57:39您升级为为黄金会员会员', 0, 0, 80, '2022-12-31 00:57:39', '2022-12-31 00:57:39', NULL);
+INSERT INTO `eb_user_level` VALUES (20, 18, 3, 3, 1, '尊敬的用户 0ee2a66b3c95, 在2022-12-31 10:24:15您升级为为白银会员会员', 0, 0, 85, '2022-12-31 02:24:15', '2022-12-31 02:24:15', NULL);
+INSERT INTO `eb_user_level` VALUES (21, 19, 3, 3, 1, '尊敬的用户 CCC6, 在2022-12-31 10:54:16您升级为为白银会员会员', 0, 0, 85, '2022-12-31 02:54:16', '2022-12-31 02:54:16', NULL);
 
 -- ----------------------------
 -- Table structure for eb_user_recharge
@@ -10028,7 +10276,7 @@ CREATE TABLE `eb_user_recharge`  (
   INDEX `uid`(`uid`) USING BTREE,
   INDEX `recharge_type`(`recharge_type`) USING BTREE,
   INDEX `paid`(`paid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户充值表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户充值表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_user_recharge
@@ -10054,6 +10302,7 @@ INSERT INTO `eb_user_recharge` VALUES (22, 1, 'recharge50917166244545883088900',
 INSERT INTO `eb_user_recharge` VALUES (23, 1, 'recharge66763166245583883928729', 500.00, 0.00, 'weixinh5', 1, '2022-09-06 17:17:39', '2022-09-06 17:17:18', 0.00);
 INSERT INTO `eb_user_recharge` VALUES (24, 2, 'recharge51381166246914317853327', 800.00, 100.00, 'weixinh5', 0, NULL, '2022-09-06 20:59:02', 0.00);
 INSERT INTO `eb_user_recharge` VALUES (25, 9, 'recharge21470166928788064660689', 800.00, 100.00, 'weixinh5', 1, '2022-11-24 19:05:03', '2022-11-24 19:04:41', 0.00);
+INSERT INTO `eb_user_recharge` VALUES (26, 11, 'recharge78152167241650069820680', 500.00, 50.00, 'weixinh5', 1, '2022-12-31 00:09:13', '2022-12-30 16:08:20', 0.00);
 
 -- ----------------------------
 -- Table structure for eb_user_sign
@@ -10130,7 +10379,7 @@ CREATE TABLE `eb_user_visit_record`  (
   `visit_type` int(2) NULL DEFAULT NULL COMMENT '访问类型',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `date`(`date`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 977 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户访问记录表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1271 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户访问记录表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_user_visit_record
@@ -11111,6 +11360,300 @@ INSERT INTO `eb_user_visit_record` VALUES (973, '2022-11-24', 9, 4);
 INSERT INTO `eb_user_visit_record` VALUES (974, '2022-11-24', 9, 4);
 INSERT INTO `eb_user_visit_record` VALUES (975, '2022-11-24', 9, 1);
 INSERT INTO `eb_user_visit_record` VALUES (976, '2022-11-24', 9, 3);
+INSERT INTO `eb_user_visit_record` VALUES (977, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (978, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (979, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (980, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (981, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (982, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (983, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (984, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (985, '2022-12-29', 2, 3);
+INSERT INTO `eb_user_visit_record` VALUES (986, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (987, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (988, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (989, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (990, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (991, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (992, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (993, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (994, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (995, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (996, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (997, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (998, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (999, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1000, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1001, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1002, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1003, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1004, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1005, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1006, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1007, '2022-12-29', 10, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1008, '2022-12-29', 10, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1009, '2022-12-29', 10, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1010, '2022-12-29', 10, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1011, '2022-12-29', 10, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1012, '2022-12-29', 10, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1013, '2022-12-29', 10, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1014, '2022-12-29', 10, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1015, '2022-12-29', 10, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1016, '2022-12-29', 10, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1017, '2022-12-29', 10, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1018, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1019, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1020, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1021, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1022, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1023, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1024, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1025, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1026, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1027, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1028, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1029, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1030, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1031, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1032, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1033, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1034, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1035, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1036, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1037, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1038, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1039, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1040, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1041, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1042, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1043, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1044, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1045, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1046, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1047, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1048, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1049, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1050, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1051, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1052, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1053, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1054, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1055, '2022-12-29', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1056, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1057, '2022-12-29', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1058, '2022-12-29', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1059, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1060, '2022-12-29', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1061, '2022-12-30', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1062, '2022-12-30', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1063, '2022-12-30', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1064, '2022-12-30', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1065, '2022-12-30', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1066, '2022-12-30', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1067, '2022-12-30', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1068, '2022-12-30', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1069, '2022-12-30', 2, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1070, '2022-12-30', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1071, '2022-12-30', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1072, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1073, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1074, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1075, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1076, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1077, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1078, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1079, '2022-12-30', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1080, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1081, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1082, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1083, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1084, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1085, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1086, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1087, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1088, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1089, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1090, '2022-12-30', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1091, '2022-12-30', 12, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1092, '2022-12-30', 12, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1093, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1094, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1095, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1096, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1097, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1098, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1099, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1100, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1101, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1102, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1103, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1104, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1105, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1106, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1107, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1108, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1109, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1110, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1111, '2022-12-30', 13, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1112, '2022-12-30', 13, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1113, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1114, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1115, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1116, '2022-12-30', 12, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1117, '2022-12-30', 12, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1118, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1119, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1120, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1121, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1122, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1123, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1124, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1125, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1126, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1127, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1128, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1129, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1130, '2022-12-30', 14, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1131, '2022-12-30', 14, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1132, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1133, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1134, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1135, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1136, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1137, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1138, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1139, '2022-12-30', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1140, '2022-12-30', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1141, '2022-12-30', 15, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1142, '2022-12-30', 15, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1143, '2022-12-30', 15, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1144, '2022-12-30', 15, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1145, '2022-12-30', 15, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1146, '2022-12-30', 15, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1147, '2022-12-30', 15, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1148, '2022-12-30', 15, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1149, '2022-12-30', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1150, '2022-12-30', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1151, '2022-12-30', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1152, '2022-12-31', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1153, '2022-12-31', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1154, '2022-12-31', 11, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1155, '2022-12-31', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1156, '2022-12-31', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1157, '2022-12-31', 11, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1158, '2022-12-31', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1159, '2022-12-31', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1160, '2022-12-31', 15, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1161, '2022-12-31', 15, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1162, '2022-12-31', 15, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1163, '2022-12-31', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1164, '2022-12-31', 11, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1165, '2022-12-31', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1166, '2022-12-31', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1167, '2022-12-31', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1168, '2022-12-31', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1169, '2022-12-31', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1170, '2022-12-31', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1171, '2022-12-31', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1172, '2022-12-31', 2, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1173, '2022-12-31', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1174, '2022-12-31', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1175, '2022-12-31', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1176, '2022-12-31', 2, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1177, '2022-12-31', 2, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1178, '2022-12-31', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1179, '2022-12-31', 11, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1180, '2022-12-31', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1181, '2022-12-31', 16, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1182, '2022-12-31', 16, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1183, '2022-12-31', 16, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1184, '2022-12-31', 15, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1185, '2022-12-31', 16, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1186, '2022-12-31', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1187, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1188, '2022-12-31', 17, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1189, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1190, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1191, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1192, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1193, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1194, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1195, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1196, '2022-12-31', 17, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1197, '2022-12-31', 17, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1198, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1199, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1200, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1201, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1202, '2022-12-31', 17, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1203, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1204, '2022-12-31', 17, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1205, '2022-12-31', 17, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1206, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1207, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1208, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1209, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1210, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1211, '2022-12-31', 15, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1212, '2022-12-31', 15, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1213, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1214, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1215, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1216, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1217, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1218, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1219, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1220, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1221, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1222, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1223, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1224, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1225, '2022-12-31', 15, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1226, '2022-12-31', 15, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1227, '2022-12-31', 15, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1228, '2022-12-31', 15, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1229, '2022-12-31', 17, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1230, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1231, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1232, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1233, '2022-12-31', 15, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1234, '2022-12-31', 17, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1235, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1236, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1237, '2022-12-31', 15, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1238, '2022-12-31', 15, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1239, '2022-12-31', 17, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1240, '2022-12-31', 17, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1241, '2022-12-31', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1242, '2022-12-31', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1243, '2022-12-31', 18, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1244, '2022-12-31', 18, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1245, '2022-12-31', 18, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1246, '2022-12-31', 18, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1247, '2022-12-31', 18, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1248, '2022-12-31', 18, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1249, '2022-12-31', 18, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1250, '2022-12-31', 18, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1251, '2022-12-31', 18, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1252, '2022-12-31', 0, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1253, '2022-12-31', 19, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1254, '2022-12-31', 19, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1255, '2022-12-31', 19, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1256, '2022-12-31', 19, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1257, '2022-12-31', 19, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1258, '2022-12-31', 19, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1259, '2022-12-31', 19, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1260, '2022-12-31', 19, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1261, '2022-12-31', 19, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1262, '2022-12-31', 19, 4);
+INSERT INTO `eb_user_visit_record` VALUES (1263, '2022-12-31', 19, 2);
+INSERT INTO `eb_user_visit_record` VALUES (1264, '2022-12-31', 19, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1265, '2022-12-31', 19, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1266, '2022-12-31', 19, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1267, '2022-12-31', 19, 1);
+INSERT INTO `eb_user_visit_record` VALUES (1268, '2022-12-31', 19, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1269, '2022-12-31', 19, 3);
+INSERT INTO `eb_user_visit_record` VALUES (1270, '2022-12-31', 19, 4);
 
 -- ----------------------------
 -- Table structure for eb_wechat_callback
@@ -11145,12 +11688,21 @@ CREATE TABLE `eb_wechat_exceptions`  (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '微信异常表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '微信异常表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of eb_wechat_exceptions
 -- ----------------------------
-INSERT INTO `eb_wechat_exceptions` VALUES (1, '40013', 'invalid appid rid: 637f218a-08079b23-59320a11', '{\"errcode\":40013,\"errmsg\":\"invalid appid rid: 637f218a-08079b23-59320a11\"}', '微信获取accessToken异常，public端', '2022-11-24 15:47:22', '2022-11-24 15:47:22');
+INSERT INTO `eb_wechat_exceptions` VALUES (2, '41030', 'invalid page rid: 63ad746d-55448925-4466ea18', '{\"errcode\":41030,\"errmsg\":\"invalid page rid: 63ad746d-55448925-4466ea18\"}', '微信小程序生成小程序码异常', '2022-12-29 11:05:18', '2022-12-29 11:05:18');
+INSERT INTO `eb_wechat_exceptions` VALUES (3, '41030', 'invalid page rid: 63ad7470-545feef5-7ea083ee', '{\"errcode\":41030,\"errmsg\":\"invalid page rid: 63ad7470-545feef5-7ea083ee\"}', '微信小程序生成小程序码异常', '2022-12-29 11:05:21', '2022-12-29 11:05:21');
+INSERT INTO `eb_wechat_exceptions` VALUES (4, '40013', 'invalid appid rid: 63aef369-46d8fd0f-02957944', '{\"errcode\":40013,\"errmsg\":\"invalid appid rid: 63aef369-46d8fd0f-02957944\"}', '微信获取accessToken异常，public端', '2022-12-30 22:19:22', '2022-12-30 22:19:22');
+INSERT INTO `eb_wechat_exceptions` VALUES (5, '40013', 'invalid appid rid: 63aef36b-2ab5382d-0c0a69b9', '{\"errcode\":40013,\"errmsg\":\"invalid appid rid: 63aef36b-2ab5382d-0c0a69b9\"}', '微信获取accessToken异常，public端', '2022-12-30 22:19:24', '2022-12-30 22:19:24');
+INSERT INTO `eb_wechat_exceptions` VALUES (6, '40013', 'invalid appid rid: 63aef371-105b2e16-0bccfbaf', '{\"errcode\":40013,\"errmsg\":\"invalid appid rid: 63aef371-105b2e16-0bccfbaf\"}', '微信获取accessToken异常，public端', '2022-12-30 22:19:29', '2022-12-30 22:19:29');
+INSERT INTO `eb_wechat_exceptions` VALUES (7, '40013', 'invalid appid rid: 63aef372-7f94b11a-1dbfedc8', '{\"errcode\":40013,\"errmsg\":\"invalid appid rid: 63aef372-7f94b11a-1dbfedc8\"}', '微信获取accessToken异常，public端', '2022-12-30 22:19:30', '2022-12-30 22:19:30');
+INSERT INTO `eb_wechat_exceptions` VALUES (8, '40013', 'invalid appid rid: 63aef37e-7e835247-1c7e5b5c', '{\"errcode\":40013,\"errmsg\":\"invalid appid rid: 63aef37e-7e835247-1c7e5b5c\"}', '微信获取accessToken异常，public端', '2022-12-30 22:19:43', '2022-12-30 22:19:43');
+INSERT INTO `eb_wechat_exceptions` VALUES (9, '40013', 'invalid appid rid: 63aef37f-01c31556-64bbdeb7', '{\"errcode\":40013,\"errmsg\":\"invalid appid rid: 63aef37f-01c31556-64bbdeb7\"}', '微信获取accessToken异常，public端', '2022-12-30 22:19:43', '2022-12-30 22:19:43');
+INSERT INTO `eb_wechat_exceptions` VALUES (10, '40013', 'invalid appid rid: 63aef381-702b8d6d-01e23dfc', '{\"errcode\":40013,\"errmsg\":\"invalid appid rid: 63aef381-702b8d6d-01e23dfc\"}', '微信获取accessToken异常，public端', '2022-12-30 22:19:45', '2022-12-30 22:19:45');
+INSERT INTO `eb_wechat_exceptions` VALUES (11, '41030', 'invalid page rid: 63af7cde-30c3f424-1b7e83ac', '{\"errcode\":41030,\"errmsg\":\"invalid page rid: 63af7cde-30c3f424-1b7e83ac\"}', '微信小程序生成小程序码异常', '2022-12-31 08:05:51', '2022-12-31 08:05:51');
 
 -- ----------------------------
 -- Table structure for eb_wechat_pay_info
